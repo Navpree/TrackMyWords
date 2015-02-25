@@ -3,6 +3,11 @@ using System.Collections.Generic;
 
 namespace ContentGrabber.Parse
 {
+
+    /// <summary>
+    /// The interface exposing the DoParse method required by the HtmlPage to parse a raw HtmlDocument for valid nodes
+    /// and their values.
+    /// </summary>
     public interface IParseProvider
     {
         /// <summary>
