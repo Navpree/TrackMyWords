@@ -28,3 +28,7 @@ proguard/
 #Content Grabber Binaries
 ContentGrabber/ContentGrabber/bin/
 ContentGrabber/ContentGrabber/obj/
+
+#Content Grabber TestSuite Binaries
+ContentGrabber/TestSuite/bin/
+ContentGrabber/TestSuite/obj/
