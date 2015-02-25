@@ -2,10 +2,7 @@
 using ContentGrabber.Write;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace ContentGrabber
 {
@@ -84,12 +81,14 @@ namespace ContentGrabber
                 {
                     string url = Constants.BASE_URL + c + "-" + pageNum + Constants.BASE_URL_SUFFIX;
                     Console.WriteLine("Artist Request for Category: " + (c + "-" + pageNum));
-                    HtmlPage page = new HtmlPage(url);
-                    page.ParseProvider = parser;
+                    HtmlPage page = new HtmlPage(url, parser);
                     page.DoGet();
                     try
                     {
-                        PageToFile.Write("grabs/__repo/a" + pageNum + ".txt", page, new ArtistWriter());
+                        PageToFile pf = new PageToFile(new ArtistWriter());
+                        string path = string.Format("grabs/__repo/a{0}.txt", pageNum);
+                        PageToFile.CreatePathTo(path);
+                        pf.Write(path, page);
                     }
                     catch
                     {
@@ -117,13 +116,14 @@ namespace ContentGrabber
             {
                 string newUrl = Constants.BuildArtistLink(url, pageNum);
                 Console.WriteLine("Song Request for: " + artist);
-                HtmlPage page = new HtmlPage(newUrl);
-                page.ParseProvider = new SongParser();
+                HtmlPage page = new HtmlPage(newUrl, new SongParser());
                 page.DoGet();
                 try
                 {
                     string file = string.Format("grabs/{0}/{1}/__repo/{2}.txt", c, artist, pageNum);
-                    PageToFile.Write(file, page, new SongWriter());
+                    PageToFile pf = new PageToFile(new SongWriter());
+                    PageToFile.CreatePathTo(file);
+                    pf.Write(file, page);
                 }
                 catch
                 {
@@ -145,13 +145,14 @@ namespace ContentGrabber
         private void ParseLyrics(string song, string url, char letter, string artist)
         {
             Console.WriteLine("Lyric Request for: " + song);
-            HtmlPage page = new HtmlPage(url);
-            page.ParseProvider = new LyricParser();
+            HtmlPage page = new HtmlPage(url, new LyricParser());
             page.DoGet();
             string file = string.Format("grabs/{0}/{1}/{2}/{3}.txt", letter, artist, page.Items["album"], song);
             try
             {
-                PageToFile.Write(file, page, new LyricWriter());
+                PageToFile pf = new PageToFile(new LyricWriter());
+                PageToFile.CreatePathTo(file);
+                pf.Write(file, page);
             }
             catch { }
         }
