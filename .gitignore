@@ -24,3 +24,7 @@ proguard/
 
 # Log Files
 *.log
+
+#Content Grabber Binaries
+ContentGrabber/ContentGrabber/bin/
+ContentGrabber/ContentGrabber/obj/
