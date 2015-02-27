@@ -28,7 +28,7 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
         textSearchedFor.append(message);
 
 
-        // get song selected then convert to string
+        // listen to which song title selected then convert to string
         TextView tv1 = (TextView) findViewById(R.id.tv1);
         TextView tv2 = (TextView) findViewById(R.id.tv2);
         TextView tv3 = (TextView) findViewById(R.id.tv3);
@@ -72,6 +72,7 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
         String message = "";
         TextView textSongSelected;
 
+        //gets selected song (3 songs for placeholders)
         switch(v.getId()){
             case R.id.tv1:
                 textSongSelected = (TextView) findViewById(R.id.tv1);

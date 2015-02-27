@@ -34,4 +34,18 @@
         android:layout_below="@+id/txtSongTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="*This is a placeholder for where actual lyrics will go* \n\nYou know you love me, I know you care \nJust shout whenever, and I&apos;ll be there \nYou are my love, you are my heart \nAnd we will never, ever , ever be apart  \n\nAre we an item? Girl, quit playing \n&quot;Were just friends,&quot; what are you saying \nSaid &quot;there&apos;s another,&quot; and looked right in my eyes \nMy first love broke my heart for the first time  \n\nAnd I was like baby, baby, baby, oh \nLike baby, baby, baby, oh \nLike baby, baby, baby, oh \nI thought you&apos;d always be mine, mine"
+        android:id="@+id/txtLyricsPlaceholder"
+        android:layout_below="@+id/txtArtist"
+        android:layout_marginTop="26dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/txtArtist"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
