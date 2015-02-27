@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Alphabet class">
+    <HelpKINode Title="methods" Url="html/c4fb78e8-ae9f-6274-3e72-8300a39fea57.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Append enumeration member" Url="html/322ca8d0-9a45-b642-5422-78e044e3e073.htm" />
+  <HelpKINode Title="ArtistParser class">
+    <HelpKINode Title="ArtistParser Class" Url="html/12f906ea-5c41-c0b3-db99-396f2da35177.htm" />
+    <HelpKINode Title="about ArtistParser class" Url="html/12f906ea-5c41-c0b3-db99-396f2da35177.htm" />
+    <HelpKINode Title="constructor" Url="html/bdbf364c-1ea1-aac5-9f43-9176239edfa8.htm" />
+    <HelpKINode Title="methods" Url="html/bbf7fcbb-e741-8bf5-8e63-efd7c4bdff00.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ArtistParser.ArtistParser constructor" Url="html/bdbf364c-1ea1-aac5-9f43-9176239edfa8.htm" />
+  <HelpKINode Title="ArtistParser.DoParse method" Url="html/bfbb1fe3-eae3-d2b0-1a56-55be6ab4729e.htm" />
+  <HelpKINode Title="ArtistWriter class">
+    <HelpKINode Title="ArtistWriter Class" Url="html/85933321-34c3-b795-f397-7b3d33b3e3a4.htm" />
+    <HelpKINode Title="about ArtistWriter class" Url="html/85933321-34c3-b795-f397-7b3d33b3e3a4.htm" />
+    <HelpKINode Title="constructor" Url="html/4e84d16e-77a6-e450-0883-da296b929651.htm" />
+    <HelpKINode Title="methods" Url="html/052fa3d7-e80a-237c-e087-5327b67d1a8a.htm" />
+    <HelpKINode Title="properties" Url="html/bf0eeaca-0042-a103-a92b-95829be5c193.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ArtistWriter.ArtistWriter constructor" Url="html/4e84d16e-77a6-e450-0883-da296b929651.htm" />
+  <HelpKINode Title="ArtistWriter.DoWrite method" Url="html/a89c0a30-7484-82d8-98e7-b22ec8c08dbb.htm" />
+  <HelpKINode Title="ArtistWriter.PreferredWriteMode property" Url="html/c7b3195f-26c8-a9cb-da21-304d9539dfc0.htm" />
+  <HelpKINode Title="ARTIST_ENTRY field" Url="html/09c2eb08-4747-9f21-0c0f-8cf3189c62bf.htm" />
+  <HelpKINode Title="BASE_URL field" Url="html/186d5a0d-d93d-1cc2-4b26-778c1d462e85.htm" />
+  <HelpKINode Title="BASE_URL_SUFFIX field" Url="html/582686b8-cb27-fe5d-79cc-c0f7f84bdd09.htm" />
+  <HelpKINode Title="BuildArtistLink method" Url="html/25ef6477-b14c-5df9-b932-4c51716ffafc.htm" />
+  <HelpKINode Title="Clean field" Url="html/8972987b-95db-8819-e650-225d85fa0021.htm" />
+  <HelpKINode Title="Constants class">
+    <HelpKINode Title="Constants Class" Url="html/d3cbda49-4468-31c7-f91d-c8ab35fcb88c.htm" />
+    <HelpKINode Title="about Constants class" Url="html/d3cbda49-4468-31c7-f91d-c8ab35fcb88c.htm" />
+    <HelpKINode Title="constructor" Url="html/93c0493f-baae-25e1-8fbe-eaa6372e661a.htm" />
+    <HelpKINode Title="fields" Url="html/b73353fd-7c84-05d1-53ac-b2d84e903409.htm" />
+    <HelpKINode Title="methods" Url="html/5727ed7c-498f-dfbe-971d-42f952b67900.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Constants.Alphabet class">
+    <HelpKINode Title="Constants.Alphabet Class" Url="html/e9aba629-1bb4-62f8-280e-c58fb1e94b61.htm" />
+    <HelpKINode Title="about Constants.Alphabet class" Url="html/e9aba629-1bb4-62f8-280e-c58fb1e94b61.htm" />
+    <HelpKINode Title="constructor" Url="html/3f12b8d3-2287-b896-9d9b-383901ba8331.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Constants.Alphabet.Alphabet constructor" Url="html/3f12b8d3-2287-b896-9d9b-383901ba8331.htm" />
+  <HelpKINode Title="Constants.Alphabet.GetEnumerator method" Url="html/94bd122d-a86a-8a38-3147-f5d03f4fbcf2.htm" />
+  <HelpKINode Title="Constants.BASE_URL field" Url="html/186d5a0d-d93d-1cc2-4b26-778c1d462e85.htm" />
+  <HelpKINode Title="Constants.BASE_URL_SUFFIX field" Url="html/582686b8-cb27-fe5d-79cc-c0f7f84bdd09.htm" />
+  <HelpKINode Title="Constants.BuildArtistLink method" Url="html/25ef6477-b14c-5df9-b932-4c51716ffafc.htm" />
+  <HelpKINode Title="Constants.Constants constructor" Url="html/93c0493f-baae-25e1-8fbe-eaa6372e661a.htm" />
+  <HelpKINode Title="Constants.XPaths structure">
+    <HelpKINode Title="Constants.XPaths Structure" Url="html/67217ff5-7fd7-3b69-a7b8-faf8a76b37f6.htm" />
+    <HelpKINode Title="about Constants.XPaths structure" Url="html/67217ff5-7fd7-3b69-a7b8-faf8a76b37f6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Constants.XPaths.ARTIST_ENTRY field" Url="html/09c2eb08-4747-9f21-0c0f-8cf3189c62bf.htm" />
+  <HelpKINode Title="Constants.XPaths.NEXT_BUTTON field" Url="html/b7fea87b-2f99-74ed-4e49-e3f1fd072ab9.htm" />
+  <HelpKINode Title="Constants.XPaths.SONG_ALBUM field" Url="html/ce0600f8-88da-ced3-ca4a-fab804be6acb.htm" />
+  <HelpKINode Title="Constants.XPaths.SONG_ENTRY field" Url="html/f6794514-d848-f6d2-1ad5-0558b8bb05d3.htm" />
+  <HelpKINode Title="Constants.XPaths.SONG_LYRIC_BODY field" Url="html/d6ce3bae-20e2-42f8-020c-1f69bd84658b.htm" />
+  <HelpKINode Title="Constants.XPaths.SONG_POP_ENTRY field" Url="html/4d760a9e-6a78-e023-aab8-41cb716acee1.htm" />
+  <HelpKINode Title="ContentGrabber namespace" Url="html/61761dd1-7603-a2b7-343d-83b6fbb446bf.htm" />
+  <HelpKINode Title="ContentGrabber.Constants class" Url="html/d3cbda49-4468-31c7-f91d-c8ab35fcb88c.htm" />
+  <HelpKINode Title="ContentGrabber.Constants.Alphabet class" Url="html/e9aba629-1bb4-62f8-280e-c58fb1e94b61.htm" />
+  <HelpKINode Title="ContentGrabber.Constants.XPaths structure" Url="html/67217ff5-7fd7-3b69-a7b8-faf8a76b37f6.htm" />
+  <HelpKINode Title="ContentGrabber.InvalidParamFormatException class" Url="html/60ba430a-c81a-b688-7274-af98bd947414.htm" />
+  <HelpKINode Title="ContentGrabber.LaunchParams structure" Url="html/06568ace-573b-414f-68bb-baa6758bdff5.htm" />
+  <HelpKINode Title="ContentGrabber.NoSuchParamException class" Url="html/50e5dfa3-8ae3-4788-1f55-5861d843cc44.htm" />
+  <HelpKINode Title="ContentGrabber.ParamException class" Url="html/7f1b4a5d-a2fa-44d4-33af-46688cc383dc.htm" />
+  <HelpKINode Title="ContentGrabber.Parse namespace" Url="html/4f5f0a93-af89-e6b1-9715-62b76132089c.htm" />
+  <HelpKINode Title="ContentGrabber.Parse.ArtistParser class" Url="html/12f906ea-5c41-c0b3-db99-396f2da35177.htm" />
+  <HelpKINode Title="ContentGrabber.Parse.HtmlPage class" Url="html/6173cf4d-cb76-d83e-d830-f4c9ec354b54.htm" />
+  <HelpKINode Title="ContentGrabber.Parse.IParseProvider interface" Url="html/853052b7-89b2-738c-f597-f0fbfdb73c6b.htm" />
+  <HelpKINode Title="ContentGrabber.Parse.LyricParser class" Url="html/e6a42b14-8c30-d925-d86c-78d5b30d5f66.htm" />
+  <HelpKINode Title="ContentGrabber.Parse.SongParser class" Url="html/6a81bdab-d954-65b6-7221-97b7d20e340a.htm" />
+  <HelpKINode Title="ContentGrabber.Parse.UnexpectedPageException class" Url="html/5190c57d-9dea-65a8-7b64-99df17955108.htm" />
+  <HelpKINode Title="ContentGrabber.Program class" Url="html/03848e56-c81b-8b55-032e-d95997e0729a.htm" />
+  <HelpKINode Title="ContentGrabber.TaskManager class" Url="html/d3743b0f-31b5-7e0f-52db-9633f67ecd5a.htm" />
+  <HelpKINode Title="ContentGrabber.Write namespace" Url="html/bc8dc97a-fbbf-c117-62a2-dc71e9b4296d.htm" />
+  <HelpKINode Title="ContentGrabber.Write.ArtistWriter class" Url="html/85933321-34c3-b795-f397-7b3d33b3e3a4.htm" />
+  <HelpKINode Title="ContentGrabber.Write.IWriteProvider interface" Url="html/76ad6d49-54dc-bc67-3b6a-7cd661464c95.htm" />
+  <HelpKINode Title="ContentGrabber.Write.LyricWriter class" Url="html/848299e6-fb11-afa3-830f-5a4dbadcfb6a.htm" />
+  <HelpKINode Title="ContentGrabber.Write.PageToFile class" Url="html/240d576c-e123-93d1-5f94-c4a2e34f1155.htm" />
+  <HelpKINode Title="ContentGrabber.Write.SongWriter class" Url="html/6d1f05c6-51eb-8cf2-ff44-e46dfbad6b20.htm" />
+  <HelpKINode Title="ContentGrabber.Write.WriteException class" Url="html/385c8fc5-ef71-5045-33ac-53c4f0950925.htm" />
+  <HelpKINode Title="ContentGrabber.Write.WriteMode enumeration" Url="html/322ca8d0-9a45-b642-5422-78e044e3e073.htm" />
+  <HelpKINode Title="CreatePathTo method" Url="html/824adc34-a620-40e0-d26d-00e360802555.htm" />
+  <HelpKINode Title="Doc property" Url="html/f5a9c94c-ae11-3cc2-403d-1c2c7dffa6cf.htm" />
+  <HelpKINode Title="DoGet method" Url="html/fa0fc7eb-b28e-761e-b9cb-effe66106d32.htm" />
+  <HelpKINode Title="DoParse method">
+    <HelpKINode Title="ArtistParser.DoParse Method " Url="html/bfbb1fe3-eae3-d2b0-1a56-55be6ab4729e.htm" />
+    <HelpKINode Title="IParseProvider.DoParse Method " Url="html/382b6e0f-c8e6-a4a4-97aa-21c887f75bd0.htm" />
+    <HelpKINode Title="LyricParser.DoParse Method " Url="html/f01958b2-125f-0c8f-47cf-099b299064df.htm" />
+    <HelpKINode Title="SongParser.DoParse Method " Url="html/304836a8-8442-4e53-4834-24302de867fc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoWrite method">
+    <HelpKINode Title="ArtistWriter.DoWrite Method " Url="html/a89c0a30-7484-82d8-98e7-b22ec8c08dbb.htm" />
+    <HelpKINode Title="IWriteProvider.DoWrite Method " Url="html/0e3c3d10-a330-926e-bbaf-38230cc92cf4.htm" />
+    <HelpKINode Title="LyricWriter.DoWrite Method " Url="html/58da6c42-7a28-ae55-1456-0cab1b6b6b72.htm" />
+    <HelpKINode Title="SongWriter.DoWrite Method " Url="html/611cf1e3-c916-508c-9a15-a3b89ee298ed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetEnumerator method" Url="html/94bd122d-a86a-8a38-3147-f5d03f4fbcf2.htm" />
+  <HelpKINode Title="HasNextPage property" Url="html/e55b477b-4bcb-d5af-87e3-d4664a10ec09.htm" />
+  <HelpKINode Title="HtmlPage class">
+    <HelpKINode Title="HtmlPage Class" Url="html/6173cf4d-cb76-d83e-d830-f4c9ec354b54.htm" />
+    <HelpKINode Title="about HtmlPage class" Url="html/6173cf4d-cb76-d83e-d830-f4c9ec354b54.htm" />
+    <HelpKINode Title="constructor" Url="html/5e64822e-9e66-0094-09c0-c55b090087aa.htm" />
+    <HelpKINode Title="methods" Url="html/0005df78-fa57-1faa-86cb-f3b1b20c19de.htm" />
+    <HelpKINode Title="properties" Url="html/8fe77977-649e-aa10-be0e-c0f46b022214.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HtmlPage.Doc property" Url="html/f5a9c94c-ae11-3cc2-403d-1c2c7dffa6cf.htm" />
+  <HelpKINode Title="HtmlPage.DoGet method" Url="html/fa0fc7eb-b28e-761e-b9cb-effe66106d32.htm" />
+  <HelpKINode Title="HtmlPage.HasNextPage property" Url="html/e55b477b-4bcb-d5af-87e3-d4664a10ec09.htm" />
+  <HelpKINode Title="HtmlPage.HtmlPage constructor" Url="html/5e64822e-9e66-0094-09c0-c55b090087aa.htm" />
+  <HelpKINode Title="HtmlPage.Items property" Url="html/73960b4e-55c5-484a-bf3d-94cfcd3a4561.htm" />
+  <HelpKINode Title="InvalidParamFormatException class">
+    <HelpKINode Title="InvalidParamFormatException Class" Url="html/60ba430a-c81a-b688-7274-af98bd947414.htm" />
+    <HelpKINode Title="about InvalidParamFormatException class" Url="html/60ba430a-c81a-b688-7274-af98bd947414.htm" />
+    <HelpKINode Title="constructor" Url="html/93d7d7e4-8f00-8943-a437-72543e8aa5d2.htm" />
+    <HelpKINode Title="events" Url="html/af2ab83b-f8ba-4c51-6d35-f51c1bd0c82c.htm" />
+    <HelpKINode Title="methods" Url="html/0c6b537f-72f0-d56c-2649-ae0bdd2f50df.htm" />
+    <HelpKINode Title="properties" Url="html/593e697c-49be-e876-eba6-0e7cea7fc494.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvalidParamFormatException.InvalidParamFormatException constructor" Url="html/93d7d7e4-8f00-8943-a437-72543e8aa5d2.htm" />
+  <HelpKINode Title="IParseProvider interface">
+    <HelpKINode Title="IParseProvider Interface" Url="html/853052b7-89b2-738c-f597-f0fbfdb73c6b.htm" />
+    <HelpKINode Title="about IParseProvider interface" Url="html/853052b7-89b2-738c-f597-f0fbfdb73c6b.htm" />
+    <HelpKINode Title="methods" Url="html/dc5e716d-e924-59da-14d5-a12e2a84492f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IParseProvider.DoParse method" Url="html/382b6e0f-c8e6-a4a4-97aa-21c887f75bd0.htm" />
+  <HelpKINode Title="Items property" Url="html/73960b4e-55c5-484a-bf3d-94cfcd3a4561.htm" />
+  <HelpKINode Title="IWriteProvider interface">
+    <HelpKINode Title="IWriteProvider Interface" Url="html/76ad6d49-54dc-bc67-3b6a-7cd661464c95.htm" />
+    <HelpKINode Title="about IWriteProvider interface" Url="html/76ad6d49-54dc-bc67-3b6a-7cd661464c95.htm" />
+    <HelpKINode Title="methods" Url="html/7dde7a4e-ebda-19f5-6512-dda5072631a2.htm" />
+    <HelpKINode Title="properties" Url="html/15ff6752-cea2-da12-c632-94f7458639f1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IWriteProvider.DoWrite method" Url="html/0e3c3d10-a330-926e-bbaf-38230cc92cf4.htm" />
+  <HelpKINode Title="IWriteProvider.PreferredWriteMode property" Url="html/86206e17-4454-1080-cb38-6b3a94649933.htm" />
+  <HelpKINode Title="LaunchParams structure">
+    <HelpKINode Title="LaunchParams Structure" Url="html/06568ace-573b-414f-68bb-baa6758bdff5.htm" />
+    <HelpKINode Title="about LaunchParams structure" Url="html/06568ace-573b-414f-68bb-baa6758bdff5.htm" />
+    <HelpKINode Title="fields" Url="html/06de4778-5158-70d6-7b23-154828487d71.htm" />
+    <HelpKINode Title="methods" Url="html/11a551ea-68df-2281-604b-d79b78f951e5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LaunchParams.Clean field" Url="html/8972987b-95db-8819-e650-225d85fa0021.htm" />
+  <HelpKINode Title="LaunchParams.Parse method" Url="html/56033611-399f-b137-2e2a-fa0d54af621f.htm" />
+  <HelpKINode Title="LaunchParams.Tasks field" Url="html/c74a1935-44d4-a2cf-902d-eed329a59c36.htm" />
+  <HelpKINode Title="LyricParser class">
+    <HelpKINode Title="LyricParser Class" Url="html/e6a42b14-8c30-d925-d86c-78d5b30d5f66.htm" />
+    <HelpKINode Title="about LyricParser class" Url="html/e6a42b14-8c30-d925-d86c-78d5b30d5f66.htm" />
+    <HelpKINode Title="constructor" Url="html/e2dfdf9d-1217-b3cc-38b0-2645a759a046.htm" />
+    <HelpKINode Title="methods" Url="html/c40d1472-17c7-dd43-2b98-f684a6601577.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LyricParser.DoParse method" Url="html/f01958b2-125f-0c8f-47cf-099b299064df.htm" />
+  <HelpKINode Title="LyricParser.LyricParser constructor" Url="html/e2dfdf9d-1217-b3cc-38b0-2645a759a046.htm" />
+  <HelpKINode Title="LyricWriter class">
+    <HelpKINode Title="LyricWriter Class" Url="html/848299e6-fb11-afa3-830f-5a4dbadcfb6a.htm" />
+    <HelpKINode Title="about LyricWriter class" Url="html/848299e6-fb11-afa3-830f-5a4dbadcfb6a.htm" />
+    <HelpKINode Title="constructor" Url="html/0bde4e09-6a46-5750-a622-c96b286d9961.htm" />
+    <HelpKINode Title="methods" Url="html/527e22ce-5c80-88c6-0092-49c828a8ffe1.htm" />
+    <HelpKINode Title="properties" Url="html/5fd37b70-b0ae-dfec-e8fb-d52ae1e5b0f5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LyricWriter.DoWrite method" Url="html/58da6c42-7a28-ae55-1456-0cab1b6b6b72.htm" />
+  <HelpKINode Title="LyricWriter.LyricWriter constructor" Url="html/0bde4e09-6a46-5750-a622-c96b286d9961.htm" />
+  <HelpKINode Title="LyricWriter.PreferredWriteMode property" Url="html/fc9f6267-2122-c4a2-9445-28024f342ac8.htm" />
+  <HelpKINode Title="NEXT_BUTTON field" Url="html/b7fea87b-2f99-74ed-4e49-e3f1fd072ab9.htm" />
+  <HelpKINode Title="NoSuchParamException class">
+    <HelpKINode Title="NoSuchParamException Class" Url="html/50e5dfa3-8ae3-4788-1f55-5861d843cc44.htm" />
+    <HelpKINode Title="about NoSuchParamException class" Url="html/50e5dfa3-8ae3-4788-1f55-5861d843cc44.htm" />
+    <HelpKINode Title="constructor" Url="html/711f95cd-f3f3-daa6-5458-c290eb6cc445.htm" />
+    <HelpKINode Title="events" Url="html/141a0743-d08d-b425-6e45-f0dcb94f09c9.htm" />
+    <HelpKINode Title="methods" Url="html/3ccef8ea-fc7e-7a88-9f22-d2973ef8f7e4.htm" />
+    <HelpKINode Title="properties" Url="html/f8578422-712b-b945-a45d-8a844c85c3ce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NoSuchParamException.NoSuchParamException constructor" Url="html/711f95cd-f3f3-daa6-5458-c290eb6cc445.htm" />
+  <HelpKINode Title="Overrite enumeration member" Url="html/322ca8d0-9a45-b642-5422-78e044e3e073.htm" />
+  <HelpKINode Title="PageToFile class">
+    <HelpKINode Title="PageToFile Class" Url="html/240d576c-e123-93d1-5f94-c4a2e34f1155.htm" />
+    <HelpKINode Title="about PageToFile class" Url="html/240d576c-e123-93d1-5f94-c4a2e34f1155.htm" />
+    <HelpKINode Title="constructor" Url="html/b95a4cf3-9ee9-c73d-e836-d39ced3430c3.htm" />
+    <HelpKINode Title="methods" Url="html/0587a1ad-f717-4e45-dd32-fa09088705c5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PageToFile.CreatePathTo method" Url="html/824adc34-a620-40e0-d26d-00e360802555.htm" />
+  <HelpKINode Title="PageToFile.PageToFile constructor" Url="html/b95a4cf3-9ee9-c73d-e836-d39ced3430c3.htm" />
+  <HelpKINode Title="PageToFile.Write method" Url="html/13ce3570-7251-4aa7-e94f-e6b3574b0729.htm" />
+  <HelpKINode Title="Param property" Url="html/b29bf4d6-b6d8-03ac-1220-f9cb38431d34.htm" />
+  <HelpKINode Title="ParamException class">
+    <HelpKINode Title="ParamException Class" Url="html/7f1b4a5d-a2fa-44d4-33af-46688cc383dc.htm" />
+    <HelpKINode Title="about ParamException class" Url="html/7f1b4a5d-a2fa-44d4-33af-46688cc383dc.htm" />
+    <HelpKINode Title="constructor" Url="html/1d92510e-7f8b-1b71-ea28-915142e1900c.htm" />
+    <HelpKINode Title="events" Url="html/36fa38a5-b26e-26c7-3b60-c346f9ed5cfe.htm" />
+    <HelpKINode Title="methods" Url="html/28d8fe6a-da7a-a645-124e-3d7b41364fa9.htm" />
+    <HelpKINode Title="properties" Url="html/f7f41891-3745-e3da-d570-4b6744525f2d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ParamException.Param property" Url="html/b29bf4d6-b6d8-03ac-1220-f9cb38431d34.htm" />
+  <HelpKINode Title="ParamException.ParamException constructor" Url="html/1d92510e-7f8b-1b71-ea28-915142e1900c.htm" />
+  <HelpKINode Title="Parse method" Url="html/56033611-399f-b137-2e2a-fa0d54af621f.htm" />
+  <HelpKINode Title="PreferredWriteMode property">
+    <HelpKINode Title="ArtistWriter.PreferredWriteMode Property " Url="html/c7b3195f-26c8-a9cb-da21-304d9539dfc0.htm" />
+    <HelpKINode Title="IWriteProvider.PreferredWriteMode Property " Url="html/86206e17-4454-1080-cb38-6b3a94649933.htm" />
+    <HelpKINode Title="LyricWriter.PreferredWriteMode Property " Url="html/fc9f6267-2122-c4a2-9445-28024f342ac8.htm" />
+    <HelpKINode Title="SongWriter.PreferredWriteMode Property " Url="html/f987dd99-cc8a-bc17-2f7c-db16b4258101.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Program class">
+    <HelpKINode Title="Program Class" Url="html/03848e56-c81b-8b55-032e-d95997e0729a.htm" />
+    <HelpKINode Title="about Program class" Url="html/03848e56-c81b-8b55-032e-d95997e0729a.htm" />
+    <HelpKINode Title="constructor" Url="html/33d49816-b29f-ff13-6219-520b19072f7c.htm" />
+    <HelpKINode Title="methods" Url="html/7ce68e01-746b-3c02-b804-4efaf29b3cfd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Program.Program constructor" Url="html/33d49816-b29f-ff13-6219-520b19072f7c.htm" />
+  <HelpKINode Title="SongParser class">
+    <HelpKINode Title="SongParser Class" Url="html/6a81bdab-d954-65b6-7221-97b7d20e340a.htm" />
+    <HelpKINode Title="about SongParser class" Url="html/6a81bdab-d954-65b6-7221-97b7d20e340a.htm" />
+    <HelpKINode Title="constructor" Url="html/78a8817e-76da-948b-a644-5ac4e6a48f61.htm" />
+    <HelpKINode Title="methods" Url="html/9763c76f-1051-0365-8ad2-0babeb41f8f5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SongParser.DoParse method" Url="html/304836a8-8442-4e53-4834-24302de867fc.htm" />
+  <HelpKINode Title="SongParser.SongParser constructor" Url="html/78a8817e-76da-948b-a644-5ac4e6a48f61.htm" />
+  <HelpKINode Title="SongWriter class">
+    <HelpKINode Title="SongWriter Class" Url="html/6d1f05c6-51eb-8cf2-ff44-e46dfbad6b20.htm" />
+    <HelpKINode Title="about SongWriter class" Url="html/6d1f05c6-51eb-8cf2-ff44-e46dfbad6b20.htm" />
+    <HelpKINode Title="constructor" Url="html/12eddb26-53a3-cd44-017a-7e765dae953e.htm" />
+    <HelpKINode Title="methods" Url="html/df5180d3-1374-d574-f7cc-c5a74140a701.htm" />
+    <HelpKINode Title="properties" Url="html/d717cf8f-67e9-6949-ec64-d4fcc9e1a3d0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SongWriter.DoWrite method" Url="html/611cf1e3-c916-508c-9a15-a3b89ee298ed.htm" />
+  <HelpKINode Title="SongWriter.PreferredWriteMode property" Url="html/f987dd99-cc8a-bc17-2f7c-db16b4258101.htm" />
+  <HelpKINode Title="SongWriter.SongWriter constructor" Url="html/12eddb26-53a3-cd44-017a-7e765dae953e.htm" />
+  <HelpKINode Title="SONG_ALBUM field" Url="html/ce0600f8-88da-ced3-ca4a-fab804be6acb.htm" />
+  <HelpKINode Title="SONG_ENTRY field" Url="html/f6794514-d848-f6d2-1ad5-0558b8bb05d3.htm" />
+  <HelpKINode Title="SONG_LYRIC_BODY field" Url="html/d6ce3bae-20e2-42f8-020c-1f69bd84658b.htm" />
+  <HelpKINode Title="SONG_POP_ENTRY field" Url="html/4d760a9e-6a78-e023-aab8-41cb716acee1.htm" />
+  <HelpKINode Title="Start method" Url="html/28341098-b0da-34ef-628c-fa6da5bb00c2.htm" />
+  <HelpKINode Title="TaskManager class">
+    <HelpKINode Title="TaskManager Class" Url="html/d3743b0f-31b5-7e0f-52db-9633f67ecd5a.htm" />
+    <HelpKINode Title="about TaskManager class" Url="html/d3743b0f-31b5-7e0f-52db-9633f67ecd5a.htm" />
+    <HelpKINode Title="constructor" Url="html/fc437514-6306-9886-0858-c754dd13bac1.htm" />
+    <HelpKINode Title="methods" Url="html/daae05e5-0d3e-de77-945c-42deabd0244e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TaskManager.Start method" Url="html/28341098-b0da-34ef-628c-fa6da5bb00c2.htm" />
+  <HelpKINode Title="TaskManager.TaskManager constructor" Url="html/fc437514-6306-9886-0858-c754dd13bac1.htm" />
+  <HelpKINode Title="Tasks field" Url="html/c74a1935-44d4-a2cf-902d-eed329a59c36.htm" />
+  <HelpKINode Title="UnexpectedPageException class">
+    <HelpKINode Title="UnexpectedPageException Class" Url="html/5190c57d-9dea-65a8-7b64-99df17955108.htm" />
+    <HelpKINode Title="about UnexpectedPageException class" Url="html/5190c57d-9dea-65a8-7b64-99df17955108.htm" />
+    <HelpKINode Title="constructor" Url="html/0a8a151a-0f63-3a98-9616-573f9ca0cc54.htm" />
+    <HelpKINode Title="events" Url="html/94a5257d-b58e-2e99-a499-cc5ab9b81252.htm" />
+    <HelpKINode Title="methods" Url="html/c913e29e-3aff-fe3b-e225-4f7236193553.htm" />
+    <HelpKINode Title="properties" Url="html/7ca5da09-38f8-dadc-d111-fbd08190e038.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UnexpectedPageException.UnexpectedPageException constructor" Url="html/0a8a151a-0f63-3a98-9616-573f9ca0cc54.htm" />
+  <HelpKINode Title="Write method" Url="html/13ce3570-7251-4aa7-e94f-e6b3574b0729.htm" />
+  <HelpKINode Title="WriteException class">
+    <HelpKINode Title="WriteException Class" Url="html/385c8fc5-ef71-5045-33ac-53c4f0950925.htm" />
+    <HelpKINode Title="about WriteException class" Url="html/385c8fc5-ef71-5045-33ac-53c4f0950925.htm" />
+    <HelpKINode Title="constructor" Url="html/470c5c7b-d336-36b6-cda1-b93afca7a81f.htm" />
+    <HelpKINode Title="events" Url="html/012cd951-1d68-81a7-1e6f-443a83f8c012.htm" />
+    <HelpKINode Title="methods" Url="html/c519cb47-acfb-3292-8388-1163f6adeb09.htm" />
+    <HelpKINode Title="properties" Url="html/ae8f3899-2c8e-19f9-020d-b498ae0b043e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WriteException.WriteException constructor" Url="html/470c5c7b-d336-36b6-cda1-b93afca7a81f.htm" />
+  <HelpKINode Title="WriteMode enumeration" Url="html/322ca8d0-9a45-b642-5422-78e044e3e073.htm" />
+  <HelpKINode Title="XPaths structure">
+    <HelpKINode Title="fields" Url="html/d7209568-8f90-5cb6-69a5-3ba8513d15f5.htm" />
+    <HelpKINode Title="methods" Url="html/bca6ae9e-afb8-b572-e8f1-bcd8442f977e.htm" />
+  </HelpKINode>
+</HelpKI>
