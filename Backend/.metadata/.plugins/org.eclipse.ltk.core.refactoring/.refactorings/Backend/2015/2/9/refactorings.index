@@ -1,0 +1,13 @@
+1425060542877	Rename type 'Main'
+1425062445597	Rename type 'ValidateQuery'
+1425079319076	Delete elements
+1425079787470	Delete element
+1425080304217	Move 'invalid.html' to 'invalid'
+1425080315312	Rename resource 'invalid.html'
+1425080334955	Rename resource 'postexpected.html'
+1425080338955	Rename resource 'userpass.html'
+1425080384836	Delete elements
+1425081098506	Move 'invalid' to 'WebContent'
+1425081114586	Move 'invalid' to 'pages'
+1425081116024	Move 'index.jsp' to 'pages'
+1425081137855	Move 'index.jsp' to 'WebContent'
