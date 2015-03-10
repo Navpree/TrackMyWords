@@ -22,7 +22,7 @@
         android:layout_below="@+id/txtTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:text="Type lyrics..." />
+        android:hint="Type lyrics..." />
 
     <Button
         android:layout_width="wrap_content"

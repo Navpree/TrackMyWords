@@ -57,10 +57,18 @@ public class SearchScreen extends ActionBarActivity {
         EditText textToSearch = (EditText) findViewById(R.id.tfTypeLyrics);
         String message = textToSearch.getText().toString();
 
-        // putExtra adds the text value to the intent in key-value pairs
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-        // system receives call and starts an instance of the Activity specified by the Intent object
+        //check if input is not blank and at least 3 characters
+        if( message.length() < 3 )
+            textToSearch.setError( "Too short!" );
+
+        else {
+            // putExtra adds the text value to the intent in key-value pairs
+            intent.putExtra(EXTRA_MESSAGE, message);
+            startActivity(intent);
+            // system receives call and starts an instance of the Activity specified by the Intent object
+        }
+
+
     }
 
 }
