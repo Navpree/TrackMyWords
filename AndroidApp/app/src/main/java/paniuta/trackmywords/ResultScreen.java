@@ -79,7 +79,7 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
                 message = textSongSelected.getText().toString();
                 break;
             case R.id.tv2:
-                textSongSelected = (TextView) findViewById(R.id.tv1);
+                textSongSelected = (TextView) findViewById(R.id.tv2);
                 message = textSongSelected.getText().toString();
                 break;
             case R.id.tv3:
