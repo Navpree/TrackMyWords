@@ -1,14 +1,19 @@
 package paniuta.trackmywords;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
+import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import java.sql.SQLException;
+import java.util.List;
+
+import paniuta.trackmywords.cache.Cache;
+import paniuta.trackmywords.cache.CacheDAO;
+import paniuta.trackmywords.cache.CacheHelper;
+import paniuta.trackmywords.cache.Result;
 
 public class ResultScreen extends ActionBarActivity implements View.OnClickListener {
 
@@ -38,16 +43,50 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
         tv2.setOnClickListener(this);
         tv3.setOnClickListener(this);
 
-
+        if(!message.equals("RETURN_FROM_LYRIC_RESULTS")){
+            getResults(message);
+        }else{
+            readCache();
+        }
     }
 
+    private void getResults(String songTitle) {
+        //TODO get results from server, write results to cache
+    }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_result_screen, menu);
-//        return true;
-//    }
+    private void readCache(){
+        CacheDAO cache = Cache.getInstance(this);
+        try{
+            if(!cache.isOpen()){
+                cache.open();
+            }
+            List<Result> results = cache.getResultList();
+            for(Result r : results){
+                //TODO: add results to activity list
+            }
+            cache.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        cache = null;
+    }
+
+    private void writeToCache(List<Result> results){
+        CacheDAO cache = Cache.getInstance(this);
+        try {
+            if (!cache.isOpen()) {
+                cache.open();
+            }
+            cache.clear(CacheHelper.RESULT_TABLE_NAME);
+            for(Result r : results){
+                cache.insert(r);
+            }
+            cache.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        cache = null;
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
