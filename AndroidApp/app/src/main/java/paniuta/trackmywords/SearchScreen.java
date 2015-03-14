@@ -3,10 +3,13 @@ package paniuta.trackmywords;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
+import paniuta.trackmywords.tasks.PostAsync;
 
 
 public class SearchScreen extends ActionBarActivity {
@@ -64,7 +67,13 @@ public class SearchScreen extends ActionBarActivity {
         else {
             // putExtra adds the text value to the intent in key-value pairs
             intent.putExtra(EXTRA_MESSAGE, message);
-            startActivity(intent);
+            //startActivity(intent);
+            new PostAsync(new PostAsync.IAsyncReceiver() {
+                @Override
+                public void onResult(String result) {
+                    Log.d("post message", result);
+                }
+            }).execute(message);
             // system receives call and starts an instance of the Activity specified by the Intent object
         }
 
