@@ -30,10 +30,11 @@ namespace ContentGrabber.Parse
             }
             else
             {
-                al = Regex.Replace(WebUtility.HtmlDecode(node.InnerHtml), @"\t|\n|\r", "");
+                al = Regex.Replace(WebUtility.HtmlDecode(node.InnerHtml), @"\t|\n|\r", " ");
             }
             items.Add("album", al);
-            items.Add("lyrics", WebUtility.HtmlDecode(doc.DocumentNode.SelectSingleNode(Constants.XPaths.SONG_LYRIC_BODY).InnerText));
+            string raw = WebUtility.HtmlDecode(doc.DocumentNode.SelectSingleNode(Constants.XPaths.SONG_LYRIC_BODY).InnerText);
+            items.Add("lyrics", Regex.Replace(raw, @"\t|\n|\r", " ").Trim());
             return items;
         }
     }

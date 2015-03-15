@@ -150,7 +150,8 @@ namespace ContentGrabber
             string file = string.Format("grabs/{0}/{1}/{2}/{3}.txt", letter, artist, page.Items["album"], song);
             try
             {
-                PageToFile pf = new PageToFile(new LyricWriter());
+                //PageToFile pf = new PageToFile(new LyricWriter());
+                PageToFile pf = new PageToFile(new DatabaseWriter());
                 PageToFile.CreatePathTo(file);
                 pf.Write(file, page);
             }
