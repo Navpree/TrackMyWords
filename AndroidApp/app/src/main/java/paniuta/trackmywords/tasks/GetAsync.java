@@ -19,13 +19,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Luke on 3/14/2015.
- */
 public class GetAsync extends AsyncTask<String, Void, String> {
 
     public static interface IAsyncReceiver{
@@ -43,7 +39,7 @@ public class GetAsync extends AsyncTask<String, Void, String> {
         // TODO Auto-generated method stub
         String results = "";
         try {
-            results = getData(params[0]);
+            results = getData(params[0], params[1]);
         } catch (IOException e) {
             e.printStackTrace();
             results = "Error During Request: " + e.getMessage();
@@ -67,10 +63,20 @@ public class GetAsync extends AsyncTask<String, Void, String> {
         return builder.toString();
     }
 
-    public String getData(String valueIWantToSend) throws IOException {
+    public String getData(String valueIWantToSend, String typeOfValue) throws IOException {
         HttpClient httpclient = new DefaultHttpClient();
-        Uri uri = new Uri.Builder().scheme("http").authority("backend-andrewsstuff-rhcloud.com").appendPath("query").appendQueryParameter("type", "song").appendQueryParameter("query", valueIWantToSend).build();
+        // specify the URL you want to post to
+
+        // create a list to store HTTP variables and their values
+        //List nameValuePairs = new ArrayList();
+        // add an HTTP variable and value pair
+//        nameValuePairs.add(new BasicNameValuePair("query", valueIWantToSend));
+//        nameValuePairs.add(new BasicNameValuePair("type", "song"));
+        //httpget.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+        //String query = URLEncodedUtils.format(nameValuePairs, "utf-8");
+        Uri uri = new Uri.Builder().scheme("http").authority("backend-andrewsstuff.rhcloud.com").appendPath("query").appendQueryParameter("type", typeOfValue).appendQueryParameter("query", valueIWantToSend).build();
         HttpGet httpget = new HttpGet(uri.toString());
+        // send the variable and value, in other words post, to the URL
         HttpResponse response = httpclient.execute(httpget);
         return streamToString(response.getEntity().getContent());
     }
