@@ -1,10 +1,12 @@
-package paniuta.trackmywords;
+package paniuta.trackmywords.screens;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import paniuta.trackmywords.R;
 
 
 public class LyricsScreen extends ActionBarActivity {
@@ -21,6 +23,14 @@ public class LyricsScreen extends ActionBarActivity {
         TextView textSongTitle = (TextView) findViewById(R.id.txtSongTitle);
         textSongTitle.append(message);
     }
+
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_lyrics_screen, menu);
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

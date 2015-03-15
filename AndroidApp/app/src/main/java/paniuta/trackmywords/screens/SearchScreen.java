@@ -1,4 +1,4 @@
-package paniuta.trackmywords;
+package paniuta.trackmywords.screens;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -9,7 +9,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import paniuta.trackmywords.tasks.GetAsync;
+import paniuta.trackmywords.R;
+import paniuta.trackmywords.beans.SongSet;
 
 
 public class SearchScreen extends ActionBarActivity {
@@ -18,7 +22,9 @@ public class SearchScreen extends ActionBarActivity {
     // define the key for the intent's extra using a public constant and app's package name
     // to ensure keys are unique, in case your app interacts with other apps
     public final static String EXTRA_MESSAGE = "com.paniuta.trackmywords.MESSAGE";
-
+    public final static String EXTRA_MESSAGE2 = "com.paniuta.trackmywords.MESSAGE2";
+    Intent intent;
+    String searchQuery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,26 +60,41 @@ public class SearchScreen extends ActionBarActivity {
 
         // creating a new activity
         // intent binds activities in runtime
-        Intent intent = new Intent(this, ResultScreen.class);
+        intent = new Intent(this, ResultScreen.class);
 
         // get input from textfield and store as String
         EditText textToSearch = (EditText) findViewById(R.id.tfTypeLyrics);
-        String message = textToSearch.getText().toString();
+        searchQuery = textToSearch.getText().toString();
 
         //check if input is not blank and at least 3 characters
-        if( message.length() < 3 )
+        if( searchQuery.length() < 3 )
             textToSearch.setError( "Too short!" );
 
         else {
             // putExtra adds the text value to the intent in key-value pairs
-            intent.putExtra(EXTRA_MESSAGE, message);
+            //intent.putExtra(EXTRA_MESSAGE, message);
             //startActivity(intent);
             new GetAsync(new GetAsync.IAsyncReceiver() {
                 @Override
                 public void onResult(String result) {
-                    Log.d("post message", result);
+                    Log.d("log", result);
+                    ObjectMapper mapper = new ObjectMapper();
+                    try {
+                        SongSet set = mapper.readValue(result, SongSet.class);
+                        String songTitle = set.getSongs().get(0).getTitle();
+                        //intent.putExtra(EXTRA_MESSAGE2, songTitle);
+
+                        Log.d("song set", result);
+                        intent.putExtra(EXTRA_MESSAGE, searchQuery);
+                        intent.putExtra(EXTRA_MESSAGE2, result);
+                        startActivity(intent);
+                    }
+                    catch(Exception e)
+                    {
+                        Log.e("mapper error", e.getMessage());
+                    }
                 }
-            }).execute(message);
+            }).execute(searchQuery, "song");
             // system receives call and starts an instance of the Activity specified by the Intent object
         }
 
