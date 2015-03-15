@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
-import paniuta.trackmywords.tasks.PostAsync;
+import paniuta.trackmywords.tasks.GetAsync;
 
 
 public class SearchScreen extends ActionBarActivity {
@@ -68,7 +68,7 @@ public class SearchScreen extends ActionBarActivity {
             // putExtra adds the text value to the intent in key-value pairs
             intent.putExtra(EXTRA_MESSAGE, message);
             //startActivity(intent);
-            new PostAsync(new PostAsync.IAsyncReceiver() {
+            new GetAsync(new GetAsync.IAsyncReceiver() {
                 @Override
                 public void onResult(String result) {
                     Log.d("post message", result);

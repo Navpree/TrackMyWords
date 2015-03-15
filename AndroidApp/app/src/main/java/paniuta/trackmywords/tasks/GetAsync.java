@@ -1,5 +1,6 @@
 package paniuta.trackmywords.tasks;
 
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.view.View;
 import android.widget.Toast;
@@ -7,7 +8,9 @@ import android.widget.Toast;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -16,13 +19,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Luke on 3/14/2015.
  */
-public class PostAsync extends AsyncTask<String, Void, String> {
+public class GetAsync extends AsyncTask<String, Void, String> {
 
     public static interface IAsyncReceiver{
         void onResult(String result);
@@ -30,7 +34,7 @@ public class PostAsync extends AsyncTask<String, Void, String> {
 
     private IAsyncReceiver rec;
 
-    public PostAsync(IAsyncReceiver rec){
+    public GetAsync(IAsyncReceiver rec){
         this.rec = rec;
     }
 
@@ -39,7 +43,7 @@ public class PostAsync extends AsyncTask<String, Void, String> {
         // TODO Auto-generated method stub
         String results = "";
         try {
-            results = postData(params[0]);
+            results = getData(params[0]);
         } catch (IOException e) {
             e.printStackTrace();
             results = "Error During Request: " + e.getMessage();
@@ -63,18 +67,11 @@ public class PostAsync extends AsyncTask<String, Void, String> {
         return builder.toString();
     }
 
-    public String postData(String valueIWantToSend) throws IOException {
+    public String getData(String valueIWantToSend) throws IOException {
         HttpClient httpclient = new DefaultHttpClient();
-        // specify the URL you want to post to
-        HttpPost httppost = new HttpPost("http://somewebsite.com/receiver.php");
-
-        // create a list to store HTTP variables and their values
-        List nameValuePairs = new ArrayList();
-        // add an HTTP variable and value pair
-        nameValuePairs.add(new BasicNameValuePair("myHttpData", valueIWantToSend));
-        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-        // send the variable and value, in other words post, to the URL
-        HttpResponse response = httpclient.execute(httppost);
+        Uri uri = new Uri.Builder().scheme("http").authority("backend-andrewsstuff-rhcloud.com").appendPath("query").appendQueryParameter("type", "song").appendQueryParameter("query", valueIWantToSend).build();
+        HttpGet httpget = new HttpGet(uri.toString());
+        HttpResponse response = httpclient.execute(httpget);
         return streamToString(response.getEntity().getContent());
     }
 }
