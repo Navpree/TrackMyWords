@@ -9,11 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import paniuta.trackmywords.tasks.GetAsync;
 import paniuta.trackmywords.R;
-import paniuta.trackmywords.beans.SongSet;
 
 
 public class SearchScreen extends ActionBarActivity {
@@ -62,42 +59,30 @@ public class SearchScreen extends ActionBarActivity {
         // intent binds activities in runtime
         intent = new Intent(this, ResultScreen.class);
 
-        // get input from textfield and store as String
+        // get input from textfield and store as String sear
         EditText textToSearch = (EditText) findViewById(R.id.tfTypeLyrics);
         searchQuery = textToSearch.getText().toString();
 
-        //check if input is not blank and at least 3 characters
-        if( searchQuery.length() < 3 )
+        //check if input is not blank and at least 3 characters ignoring leading spaces
+        if( searchQuery.trim().length() < 3 )
             textToSearch.setError( "Too short!" );
 
         else {
             // putExtra adds the text value to the intent in key-value pairs
             //intent.putExtra(EXTRA_MESSAGE, message);
             //startActivity(intent);
+
             new GetAsync(new GetAsync.IAsyncReceiver() {
                 @Override
                 public void onResult(String result) {
-                    Log.d("log", result);
-                    ObjectMapper mapper = new ObjectMapper();
-                    try {
-                        SongSet set = mapper.readValue(result, SongSet.class);
-                        String songTitle = set.getSongs().get(0).getTitle();
-                        //intent.putExtra(EXTRA_MESSAGE2, songTitle);
-
-                        Log.d("song set", result);
-                        intent.putExtra(EXTRA_MESSAGE, searchQuery);
-                        intent.putExtra(EXTRA_MESSAGE2, result);
-                        startActivity(intent);
-                    }
-                    catch(Exception e)
-                    {
-                        Log.e("mapper error", e.getMessage());
-                    }
+                    Log.d("song set", result);
+                    intent.putExtra(EXTRA_MESSAGE, searchQuery);
+                    intent.putExtra(EXTRA_MESSAGE2, result);
+                    startActivity(intent);
                 }
             }).execute(searchQuery, "song");
             // system receives call and starts an instance of the Activity specified by the Intent object
         }
-
 
     }
 
