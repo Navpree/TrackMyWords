@@ -9,6 +9,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import paniuta.trackmywords.beans.Lyrics;
+import paniuta.trackmywords.beans.Song;
+import paniuta.trackmywords.beans.SongSet;
+
 public class CacheDAO {
 
     private SQLiteDatabase database;
@@ -33,14 +37,6 @@ public class CacheDAO {
         return open;
     }
 
-    public <T> void insert(T data) {
-        if (data instanceof Result) {
-            insertResult((Result) data);
-        } else if (data instanceof LyricResult) {
-            insertLyricResult((LyricResult) data);
-        }
-    }
-
     public void clear(String tableName) {
         TableInfo info = CacheHelper.getInfoByName(tableName);
         if(info == null){
@@ -49,52 +45,34 @@ public class CacheDAO {
         database.execSQL("delete from " + info.name);
     }
 
-    private void insertResult(Result r) {
+    public void insertSongSet(SongSet set){
+        for(Song s : set.getSongs()){
+            insertSong(s);
+        }
+    }
+
+    public void insertSong(Song song) {
         TableInfo info = CacheHelper.getInfoByName(CacheHelper.RESULT_TABLE_NAME);
         ContentValues values = new ContentValues();
-        values.put(info.columns[0], r.resultID);
-        values.put(info.columns[1], r.resultTitle);
-        values.put(info.columns[2], r.resultIndex);
+        values.put(info.columns[0], song.getId());
+        values.put(info.columns[1], song.getTitle());
         database.insert(info.name, null, values);
     }
 
-    private void insertLyricResult(LyricResult r) {
-        TableInfo info = CacheHelper.getInfoByName(CacheHelper.LYRIC_RESULT_TABLE_NAME);
-        ContentValues values = new ContentValues();
-        values.put(info.columns[0], r.songID);
-        values.put(info.columns[1], r.songTitle);
-        values.put(info.columns[2], r.albumName);
-        values.put(info.columns[3], r.artistName);
-        values.put(info.columns[4], r.songLyrics);
-        database.insert(info.name, null, values);
-    }
-
-    public List<Result> getResultList() {
-        List<Result> results = new ArrayList<Result>();
+    public SongSet getResultList() {
+        SongSet set =  new SongSet();
+        List<Song> results = new ArrayList<Song>();
         Cursor cursor = database.query(CacheHelper.TABLES[0].name, CacheHelper.TABLES[0].columns, null, null, null, null, null);
+        cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Result r = Result.cursorToResult(cursor);
-            if(r != null) {
-                results.add(r);
+            Song song = Converter.cursorToResult(cursor);
+            if(song != null) {
+                results.add(song);
             }
             cursor.moveToNext();
         }
-        return results;
-    }
-
-    public Result getResultAtIndex(int index) {
-        Result r = null;
-        TableInfo info = CacheHelper.getInfoByName(CacheHelper.RESULT_TABLE_NAME);
-        Cursor cursor = database.query(info.name, info.columns, info.columns[0] + "=" + index, null, null, null, null);
-        if(cursor.moveToFirst()){
-            r = Result.cursorToResult(cursor);
-        }
-        return r;
-    }
-
-    public LyricResult getLyricResult() {
-        LyricResult result = null;
-        return result;
+        set.setSongs(results);
+        return set;
     }
 
 }

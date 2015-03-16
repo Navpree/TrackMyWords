@@ -72,7 +72,7 @@ public class SearchScreen extends ActionBarActivity {
             //intent.putExtra(EXTRA_MESSAGE, message);
             //startActivity(intent);
 
-            new GetAsync(new GetAsync.IAsyncReceiver() {
+            new GetAsync(this, new GetAsync.IAsyncReceiver() {
                 @Override
                 public void onResult(String result) {
                     Log.d("song set", result);

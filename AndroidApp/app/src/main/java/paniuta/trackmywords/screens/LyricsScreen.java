@@ -1,5 +1,8 @@
 package paniuta.trackmywords.screens;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -17,7 +20,6 @@ import paniuta.trackmywords.beans.Song;
 import paniuta.trackmywords.beans.SongSet;
 import paniuta.trackmywords.tasks.GetAsync;
 
-
 public class LyricsScreen extends ActionBarActivity {
 
     @Override
@@ -26,16 +28,15 @@ public class LyricsScreen extends ActionBarActivity {
         setContentView(R.layout.activity_lyrics_screen);
 
         Intent intent = getIntent();
-        //String result = intent.getStringExtra(SearchScreen.EXTRA_MESSAGE2);
         String selectedSongId = intent.getStringExtra(ResultScreen.EXTRA_MESSAGE);
 
-        new GetAsync(new GetAsync.IAsyncReceiver() {
+        final Context ref = this;
+        new GetAsync(this, new GetAsync.IAsyncReceiver() {
             @Override
             public void onResult(String result) {
                 Log.d("lyrics result", result);
 
                 ObjectMapper mapper = new ObjectMapper();
-
                 try {
                     Lyrics songInfo = mapper.readValue(result, Lyrics.class);
 
@@ -54,26 +55,14 @@ public class LyricsScreen extends ActionBarActivity {
                     TextView textLyrics = (TextView) findViewById(R.id.txtLyrics);
                     textLyrics.append(songInfo.getSongLyrics());
                     Log.d("lyrics", songInfo.getSongLyrics());
-
-                }
-
-                catch(Exception e)
-                {
+                }catch(Exception e){
                     Log.e("map error", e.getMessage());
+                    buildDialog();
                 }
-
             }
         }).execute(selectedSongId, "lyrics");
 
     }
-
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_lyrics_screen, menu);
-//        return true;
-//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -90,7 +79,21 @@ public class LyricsScreen extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void back_search(View view) {
+    private void buildDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(LyricsScreen.this);
+        builder.setTitle("Error Displaying Lyrics");
+        builder.setMessage("An error occured processing your request and the song information could not be displayed.");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                backToSearch(null);
+            }
+        });
+        builder.create().show();
+    }
+
+    public void backToSearch(View view) {
         Intent getback = new Intent(this, SearchScreen.class);
         startActivity(getback);
     }

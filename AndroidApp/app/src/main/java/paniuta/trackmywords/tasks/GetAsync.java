@@ -1,8 +1,12 @@
 package paniuta.trackmywords.tasks;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
@@ -29,15 +33,24 @@ public class GetAsync extends AsyncTask<String, Void, String> {
     }
 
     private IAsyncReceiver rec;
+    private ProgressDialog dialog;
+    private Context context;
 
-    public GetAsync(IAsyncReceiver rec){
+    public GetAsync(Context context, IAsyncReceiver rec){
         this.rec = rec;
+        this.context = context;
+    }
+
+    @Override
+    protected void onPreExecute(){
+        Log.d("GetAsync Debug", "Starting onPreExecute");
+        dialog = ProgressDialog.show(context, "Loading", "Loading results, please wait...", true, false);
+        super.onPreExecute();
     }
 
     @Override
     protected String doInBackground(String... params) {
-        // TODO Auto-generated method stub
-        String results = "";
+        String results;
         try {
             results = getData(params[0], params[1]);
         } catch (IOException e) {
@@ -47,8 +60,15 @@ public class GetAsync extends AsyncTask<String, Void, String> {
         return results;
     }
 
+    @Override
     protected void onPostExecute(String result){
+        Log.d("GetAsync Debug", "Starting onPostExecute");
+        if(dialog != null && dialog.isShowing()) {
+            dialog.dismiss();
+        }
+        Log.d("GetAsync Debug", "Returning results");
         rec.onResult(result);
+        super.onPostExecute(result);
     }
 
     private String streamToString(InputStream is) throws IOException {
@@ -65,16 +85,12 @@ public class GetAsync extends AsyncTask<String, Void, String> {
 
     public String getData(String valueIWantToSend, String typeOfValue) throws IOException {
         HttpClient httpclient = new DefaultHttpClient();
-        // specify the URL you want to post to
-
-        // create a list to store HTTP variables and their values
-        //List nameValuePairs = new ArrayList();
-        // add an HTTP variable and value pair
-//        nameValuePairs.add(new BasicNameValuePair("query", valueIWantToSend));
-//        nameValuePairs.add(new BasicNameValuePair("type", "song"));
-        //httpget.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-        //String query = URLEncodedUtils.format(nameValuePairs, "utf-8");
-        Uri uri = new Uri.Builder().scheme("http").authority("backend-andrewsstuff.rhcloud.com").appendPath("query").appendQueryParameter("type", typeOfValue).appendQueryParameter("query", valueIWantToSend).build();
+        //create an encoded uri that we want to send our request to
+        Uri uri = new Uri.Builder().scheme("http").authority("backend-andrewsstuff.rhcloud.com")
+                .appendPath("query")
+                .appendQueryParameter("type", typeOfValue)
+                .appendQueryParameter("query", valueIWantToSend)
+                .build();
         HttpGet httpget = new HttpGet(uri.toString());
         // send the variable and value, in other words post, to the URL
         HttpResponse response = httpclient.execute(httpget);
