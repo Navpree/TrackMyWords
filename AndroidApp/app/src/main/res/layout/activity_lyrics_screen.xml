@@ -74,6 +74,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:onClick="back_search"/>
+        android:onClick="backToSearch"/>
 
 </RelativeLayout>

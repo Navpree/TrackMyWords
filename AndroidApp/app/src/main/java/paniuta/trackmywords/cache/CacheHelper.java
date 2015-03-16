@@ -8,10 +8,9 @@ public class CacheHelper extends SQLiteOpenHelper{
 
     public static final String DATABASE_NAME = "app_cache";
     public static final int DATABASE_VERSION = 1;
-    public static final String RESULT_TABLE_NAME = "results", LYRIC_RESULT_TABLE_NAME = "lyric_results";
+    public static final String RESULT_TABLE_NAME = "songs";
     public static final TableInfo TABLES[] = {
-            new TableInfo("results", "result_id", "result_title", "result_index"),
-            new TableInfo("lyric_results", "song_id", "song_title", "album_name", "artist_name", "song_lyrics")
+            new TableInfo("songs", "song_id", "song_title"),
     };
 
     public CacheHelper(Context context){
@@ -29,8 +28,7 @@ public class CacheHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLES[0].name + " (result_id integer primary key, result_title varchar(50), result_index integer not null);");
-        db.execSQL("create table " + TABLES[1].name + " (song_id integer primary key, song_title varchar(50), album_name varchar(50), artist_name varchar(50), song_lyrics varchar(255));");
+        db.execSQL("create table " + TABLES[0].name + " (song_id integer primary key, song_title varchar(50));");
     }
 
     @Override
