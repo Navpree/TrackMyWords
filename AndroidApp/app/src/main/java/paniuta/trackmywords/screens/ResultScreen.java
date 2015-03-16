@@ -57,7 +57,7 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
                 tv.setId(s.getId());
 //                tv.setText(s.getTitle() + "\n"Tyler Shaw - House of Cards);
                 tv.setText(s.getTitle());
-                tv.setPadding(0, 3, 0, 3);
+                tv.setPadding(2, 3, 2, 3);
 
                 layout.addView(tv);
 

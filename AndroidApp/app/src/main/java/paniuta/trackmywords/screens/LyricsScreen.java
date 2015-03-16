@@ -3,11 +3,19 @@ package paniuta.trackmywords.screens;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import paniuta.trackmywords.R;
+import paniuta.trackmywords.beans.Lyrics;
+import paniuta.trackmywords.beans.Song;
+import paniuta.trackmywords.beans.SongSet;
+import paniuta.trackmywords.tasks.GetAsync;
 
 
 public class LyricsScreen extends ActionBarActivity {
@@ -18,11 +26,45 @@ public class LyricsScreen extends ActionBarActivity {
         setContentView(R.layout.activity_lyrics_screen);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(ResultScreen.EXTRA_MESSAGE);
+        //String result = intent.getStringExtra(SearchScreen.EXTRA_MESSAGE2);
+        String selectedSongId = intent.getStringExtra(ResultScreen.EXTRA_MESSAGE);
 
-        // append the text from Search Screen
-        TextView textSongTitle = (TextView) findViewById(R.id.txtSongTitle);
-        textSongTitle.append(message);
+        new GetAsync(new GetAsync.IAsyncReceiver() {
+            @Override
+            public void onResult(String result) {
+                Log.d("lyrics result", result);
+
+                ObjectMapper mapper = new ObjectMapper();
+
+                try {
+                    Lyrics songInfo = mapper.readValue(result, Lyrics.class);
+
+                    TextView textSongTitle = (TextView) findViewById(R.id.txtSongTitle);
+                    textSongTitle.append(songInfo.getSongTitle());
+                    Log.d("title", songInfo.getSongTitle());
+
+                    TextView textArtist = (TextView) findViewById(R.id.txtArtist);
+                    textArtist.append(songInfo.getArtistName());
+                    Log.d("artist", songInfo.getArtistName());
+
+                    TextView textAlbum = (TextView) findViewById(R.id.txtAlbum);
+                    textAlbum.append(songInfo.getAlbumTitle());
+                    Log.d("artist", songInfo.getAlbumTitle());
+
+                    TextView textLyrics = (TextView) findViewById(R.id.txtLyrics);
+                    textLyrics.append(songInfo.getSongLyrics());
+                    Log.d("lyrics", songInfo.getSongLyrics());
+
+                }
+
+                catch(Exception e)
+                {
+                    Log.e("map error", e.getMessage());
+                }
+
+            }
+        }).execute(selectedSongId, "lyrics");
+
     }
 
 
