@@ -6,6 +6,7 @@ import java.util.Date;
  * Created by joannetanson on 3/15/15.
  */
 public class Song {
+
     private int id;
     private String title, lyrics;
     private Date releaseDate;

@@ -26,14 +26,34 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * An AsynTask usable to make a request to the backend server and retrieve
+ * the json returned from the request.
+ */
 public class GetAsync extends AsyncTask<String, Void, String> {
 
+    /**
+     * A functional interface used as a callback to return the result back to
+     * the main activity thread.
+     */
     public static interface IAsyncReceiver{
         void onResult(String result);
     }
 
+    /**
+     * An instance of the IAsyncReceiver to be used as an event callback.
+     */
     private IAsyncReceiver rec;
+
+    /**
+     * A progress dialog to tell the user the programming is actively running and trying to
+     * load information.
+     */
     private ProgressDialog dialog;
+
+    /**
+     * The context of the current activity making the request.
+     */
     private Context context;
 
     public GetAsync(Context context, IAsyncReceiver rec){
@@ -71,6 +91,12 @@ public class GetAsync extends AsyncTask<String, Void, String> {
         super.onPostExecute(result);
     }
 
+    /**
+     * Converts an InputStream from an HttpResponse entity into a String.
+     * @param is The InputStream from the HttpResposne entity
+     * @return A String containing all the json data from the response.
+     * @throws IOException
+     */
     private String streamToString(InputStream is) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder builder = new StringBuilder("");
@@ -83,6 +109,14 @@ public class GetAsync extends AsyncTask<String, Void, String> {
         return builder.toString();
     }
 
+    /**
+     * Takes in the type of query to make and the query parameter, makes a get request,
+     * and returns the response as a json string.
+     * @param valueIWantToSend Specifies the query parameter for the get request.
+     * @param typeOfValue Specifies the type of query type to be making to the backend.
+     * @return A string containing the json data returned by the server.
+     * @throws IOException
+     */
     public String getData(String valueIWantToSend, String typeOfValue) throws IOException {
         HttpClient httpclient = new DefaultHttpClient();
         //create an encoded uri that we want to send our request to

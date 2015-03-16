@@ -21,79 +21,95 @@ import paniuta.trackmywords.cache.CacheDAO;
 import paniuta.trackmywords.cache.CacheHelper;
 import paniuta.trackmywords.tasks.GetAsync;
 
-
 public class ResultScreen extends ActionBarActivity implements View.OnClickListener {
 
+    /**
+     * The key value to be paired up with the user's query string when passing the query string
+     * in the intent bundle to the LyricsScreen for further processing.
+     */
     public final static String EXTRA_MESSAGE = "com.paniuta.trackmywords.MESSAGE";
+
+    /**
+     * Stores the last query string that the user requested.
+     */
+    private static String lastQueryMessage = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_screen);
 
+        //check to see if the current intent bundle is valid
+        boolean valid = validBundle();
+
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        if (bundle == null || !bundle.containsKey(SearchScreen.EXTRA_MESSAGE)) {
+        //Find the text view we will use to display the users search query
+        TextView textSearchedFor = (TextView) findViewById(R.id.txtSearchedFor);
+        if(valid){
+            String searchQuery = intent.getStringExtra(SearchScreen.EXTRA_MESSAGE);
+            textSearchedFor.append(searchQuery);
+            makeRequest(searchQuery);
+        }else{
+            textSearchedFor.append(lastQueryMessage);
             try {
-                SongSet set = readCache();
+                SongSet set = CacheHelper.helpReadCache(this);
                 fillView(set);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            return;
         }
-
-        String searchQuery = intent.getStringExtra(SearchScreen.EXTRA_MESSAGE);
-        String result = intent.getStringExtra(SearchScreen.EXTRA_MESSAGE2);
-        // You searched for:
-        TextView textSearchedFor = (TextView) findViewById(R.id.txtSearchedFor);
-        // append the text from Search Screen
-        try {
-            textSearchedFor.append(searchQuery);
-        } catch (Exception e) {
-            Log.e("null pointer error", e.getMessage());
-        }
-
-        //start populating our listview with the results
-        handleResult(result);
     }
 
+    /**
+     * Makes a request to the backend server using the GetAsync class.
+     * The receiver callback will forward the results to the handleResult method.
+     * @param searchQuery The search query to be send to the backend to be processed.
+     */
+    private void makeRequest(String searchQuery){
+        new GetAsync(this, new GetAsync.IAsyncReceiver() {
+            @Override
+            public void onResult(String result) {
+                Log.d("song set", result);
+                //start populating the list view with the results
+                handleResult(result);
+            }
+        }).execute(searchQuery, "song");
+    }
+
+    /**
+     * Checks to see if the current bundle is not a null value and contains the SearchScreen.EXTRA_MESSAGE key.
+     *
+     * @return True if the bundle is not null and contains the EXTRA_MESSAGE key, otherwise returns false.
+     */
+    private boolean validBundle(){
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if (bundle == null || !bundle.containsKey(SearchScreen.EXTRA_MESSAGE)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Maps the result string to a SongSet instance and writes the instance to cache/fills the current
+     * view with a list of the song results.
+     * @param result The json string returned from the server based on the provided user query.
+     */
     private void handleResult(String result){
         ObjectMapper mapper = new ObjectMapper();
         try {
             SongSet set = mapper.readValue(result, SongSet.class);
-            if(set.getSongs().size() == 0){
-
-            }
             fillView(set);
-            writeCache(set);
+            CacheHelper.helpWriteCache(this, set);
         } catch (Exception e) {
             Log.e("mapper error", e.getMessage());
         }
     }
 
-    private void writeCache(SongSet set) throws SQLException {
-        if (set.getSongs().size() > 0) {
-            CacheDAO cache = Cache.getInstance(this);
-            if (!cache.isOpen()) {
-                cache.open();
-            }
-            cache.clear(CacheHelper.RESULT_TABLE_NAME);
-            cache.insertSongSet(set);
-            cache.close();
-        }
-    }
-
-    private SongSet readCache() throws SQLException {
-        CacheDAO cache = Cache.getInstance(this);
-        if(!cache.isOpen()){
-            cache.open();
-        }
-        SongSet set = cache.getResultList();
-        cache.close();
-        return set;
-    }
-
+    /**
+     * Fill the LinearLayout view with all the songs from the parsed SongSet instance.
+     * @param set The SongSet instance containing all the songs to be displayed to the user.
+     */
     private void fillView(SongSet set){
         LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout);
         for (Song s : set.getSongs()) {
