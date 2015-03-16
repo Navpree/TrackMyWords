@@ -12,16 +12,13 @@ import android.widget.EditText;
 import paniuta.trackmywords.tasks.GetAsync;
 import paniuta.trackmywords.R;
 
-
+/**
+ * The activity for the main search screen where the user can type in their search query and tap the search button
+ */
 public class SearchScreen extends ActionBarActivity {
 
-    // for the next activity to query the extra data
-    // define the key for the intent's extra using a public constant and app's package name
-    // to ensure keys are unique, in case your app interacts with other apps
+    //unique keys for the message that will be placed in the intent bundle
     public final static String EXTRA_MESSAGE = "com.paniuta.trackmywords.MESSAGE";
-    public final static String EXTRA_MESSAGE2 = "com.paniuta.trackmywords.MESSAGE2";
-    Intent intent;
-    String searchQuery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,38 +49,24 @@ public class SearchScreen extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // adding action to Search button
+    /**
+     * Starts a new activity intent for the ResultScreen, adding in the query string to the intent bundle.
+     * @param view The view passed in during the button click call
+     */
     public void goSearch(View view) {
-
-        // creating a new activity
-        // intent binds activities in runtime
-        intent = new Intent(this, ResultScreen.class);
-
         // get input from textfield and store as String sear
         EditText textToSearch = (EditText) findViewById(R.id.tfTypeLyrics);
-        searchQuery = textToSearch.getText().toString();
+        String searchQuery = textToSearch.getText().toString();
 
         //check if input is not blank and at least 3 characters ignoring leading spaces
-        if( searchQuery.trim().length() < 3 )
-            textToSearch.setError( "Too short!" );
-
-        else {
-            // putExtra adds the text value to the intent in key-value pairs
-            //intent.putExtra(EXTRA_MESSAGE, message);
-            //startActivity(intent);
-
-            new GetAsync(this, new GetAsync.IAsyncReceiver() {
-                @Override
-                public void onResult(String result) {
-                    Log.d("song set", result);
-                    intent.putExtra(EXTRA_MESSAGE, searchQuery);
-                    intent.putExtra(EXTRA_MESSAGE2, result);
-                    startActivity(intent);
-                }
-            }).execute(searchQuery, "song");
-            // system receives call and starts an instance of the Activity specified by the Intent object
+        if( searchQuery.trim().length() < 3 ) {
+            textToSearch.setError("Too shot, search term must be at least 3 characters in length.");
+        }else {
+            //create a new intent to start the result activity
+            Intent intent = new Intent(SearchScreen.this, ResultScreen.class);
+            //add the search query to the intent bundle
+            intent.putExtra(EXTRA_MESSAGE, searchQuery);
+            startActivity(intent);
         }
-
     }
-
 }
