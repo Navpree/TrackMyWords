@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import paniuta.trackmywords.R;
@@ -45,5 +46,10 @@ public class LyricsScreen extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void back_search(View view) {
+        Intent getback = new Intent(this, SearchScreen.class);
+        startActivity(getback);
     }
 }

@@ -138,7 +138,7 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
 //                break;
 //        }
 
-        intent.putExtra(EXTRA_MESSAGE, message);
+       // intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 }
