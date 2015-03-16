@@ -11,16 +11,6 @@ import android.widget.TextView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import paniuta.trackmywords.R;
 import paniuta.trackmywords.beans.Song;
 import paniuta.trackmywords.beans.SongSet;
@@ -29,8 +19,6 @@ import paniuta.trackmywords.beans.SongSet;
 public class ResultScreen extends ActionBarActivity implements View.OnClickListener {
 
     public final static String EXTRA_MESSAGE = "com.paniuta.trackmywords.MESSAGE";
-    private static final int NUM_OF_TEXTS = 5;
-    String songTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +33,14 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
         // You searched for:
         TextView textSearchedFor = (TextView) findViewById(R.id.txtSearchedFor);
         // append the text from Search Screen
-        textSearchedFor.append(searchQuery);
+        try {
+            textSearchedFor.append(searchQuery);
+            //cache operations
+        }
+        catch(Exception e)
+        {
+            Log.e("null pointer error", e.getMessage());
+        }
 
         ObjectMapper mapper = new ObjectMapper();
         LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout);
@@ -60,11 +55,11 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
                 tv.setOnClickListener(this);
 
                 tv.setId(s.getId());
+//                tv.setText(s.getTitle() + "\n"Tyler Shaw - House of Cards);
                 tv.setText(s.getTitle());
-                layout.addView(tv);
+                tv.setPadding(0, 3, 0, 3);
 
-//                textSearchedFor.append(s.getTitle());
-//                Log.d("song", s.getTitle());
+                layout.addView(tv);
 
 //                songTitle = set.getSongs().get(0).getTitle();
 //                Log.d("song set", songTitle);
@@ -75,16 +70,6 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
         {
             Log.e("mapper error", e.getMessage());
         }
-
-        // listen to which song title selected then convert to string
-        TextView tv1 = (TextView) findViewById(R.id.tv1);
-//        TextView tv2 = (TextView) findViewById(R.id.tv2);
-//        TextView tv3 = (TextView) findViewById(R.id.tv3);
-
-        // bind listeners
-        tv1.setOnClickListener(this);
-//        tv2.setOnClickListener(this);
-//        tv3.setOnClickListener(this);
 
     }
 
@@ -115,30 +100,14 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        Log.d("clicked", "clicked");
+        Log.d("clicked song ID", String.valueOf(v.getId()));
         Intent intent = new Intent(this, LyricsScreen.class);
 //        TextView textSongSelected = (TextView)findViewById(R.id.tv1);
-        TextView textSongSelected = (TextView)findViewById(v.getId());
+//        TextView textSongSelected = (TextView)findViewById(v.getId());
 //        String message = textSongSelected.getText().toString();
+        String selectedSongId = String.valueOf(v.getId());
 
-
-        //gets selected song (3 songs for placeholders)
-//        switch(v.getId()){
-//            case R.id.tv1:
-//                textSongSelected = (TextView) findViewById(R.id.tv1);
-//                message = textSongSelected.getText().toString();
-//                break;
-//            case R.id.tv2:
-//                textSongSelected = (TextView) findViewById(R.id.tv2);
-//                message = textSongSelected.getText().toString();
-//                break;
-//            case R.id.tv3:
-//                textSongSelected = (TextView) findViewById(R.id.tv3);
-//                message = textSongSelected.getText().toString();
-//                break;
-//        }
-
-       // intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra(EXTRA_MESSAGE, selectedSongId);
         startActivity(intent);
     }
 }
