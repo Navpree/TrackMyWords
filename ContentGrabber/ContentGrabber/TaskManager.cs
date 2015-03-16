@@ -151,7 +151,7 @@ namespace ContentGrabber
             try
             {
                 //PageToFile pf = new PageToFile(new LyricWriter());
-                PageToFile pf = new PageToFile(new DatabaseWriter());
+                PageToFile pf = new PageToFile(new DatabaseSongWriter());
                 PageToFile.CreatePathTo(file);
                 pf.Write(file, page);
             }
