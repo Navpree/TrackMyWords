@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ContentGrabber.Write
 {
-    public class DatabaseWriter : IWriteProvider
+    public class DatabaseSongWriter : IWriteProvider
     {
 
         public WriteMode PreferredWriteMode
@@ -28,7 +28,6 @@ namespace ContentGrabber.Write
             string album = parts[len - 2];
             string artist = parts[len - 3];
             string lyrics = items["lyrics"];
-
             StreamWriter query;
             if (File.Exists("grabs/__query__.txt"))
             {
@@ -39,7 +38,10 @@ namespace ContentGrabber.Write
                 query = new StreamWriter("grabs/__query__.txt");
             }
             query.WriteLine(string.Format("insert into Song (title, lyrics, release_date) values ('{0}', '{1}', {2});", song, lyrics, "2012-12-12"));
+            query.WriteLine(string.Format("insert into Album(title, cover, release_date) values (\'{0}\', \'{1}\', {2});", album, "null", "2012-12-12"));
             query.WriteLine(string.Format("insert into Artist (artist_name) select * from (select \'{0}\') as tmp where not exists(select artist_name from Artist where artist_name = \'{0}\') limit 1;", artist));
+            query.WriteLine(string.Format("insert into Song_Album (song_id, album_id) select song_id, album_id from Song, Album where Song.title = \'{0}\' and Album.title = \'{1}\';", song, album));
+            query.WriteLine(string.Format("insert into Artist_Album (album_id, artist_id) select album_id, artist_id from Album, Artist where Album.title = \'{0}\' and Artist.artist_name = \'{1}\';", album, artist));
             query.Flush();
             query.Close();
             query.Dispose();
