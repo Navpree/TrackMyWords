@@ -28,7 +28,7 @@ public class AdminQueryTests {
 
     @Parameters
     public static List<Object[]> data(){
-        Object[][] data = new Object[][]{{"/0?title=monkey&sort=title", 0}};
+        Object[][] data = new Object[][]{{"/0?title=monkey&sort=title", 1}};
         return Arrays.asList(data);
     }
 
