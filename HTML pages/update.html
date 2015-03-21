@@ -1,0 +1,79 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<!-- possibly javascript for form validation -->
+
+	<title>
+		TrackMyWords | Admin
+	</title>
+	
+	<style type="text/css">
+	.auto-style1 {
+		margin-left: 4;
+	}
+	</style>
+	
+	<div class="col-sm-offset-1 col-sm-10">
+		<h1>TrackMyWords <small>Admin Page</small></h1>
+	</div>
+	
+</head>
+
+<body>
+
+
+ <div class="row">
+ 	<div class="col-sm-offset-1 col-sm-10">
+<div id="content">
+<h2> Update Song </h2>
+<form name="addSong" action="index.html" method="post" onClick="return validateForm()">
+<p><text>Artist&nbsp;&nbsp; </text> <input type="text" name="artist" ></p>
+
+<p>   Title&nbsp;&nbsp; &nbsp;  <input type="text" name="title" ></p>
+<p><text>Album</text> <input type="text" name="album" > </p>
+<p><text>Year&nbsp; &nbsp;  </text> <input type="text" name="year" ></p>
+
+
+
+<p>Lyrics</p>
+	<textarea type="text" rows="25" cols="100" name="lyrics"></textarea>
+
+
+<input type="checkbox" name="draft" value="draft">Add to Draft
+
+<button type="button"></button>
+<button type="button">View All</button>
+</div>
+</div>
+</div>
+
+</form>
+
+</body>
+
+<footer>
+	<hr>
+	<div class="row col-sm-offset-2">
+    <div class="col-sm-4">
+		<span class="glyphicon glyphicon-phone"></span> TrackMyWords <br />
+		<span class="glyphicon glyphicon-copyright-mark"></span> Team Paniuta, 2015 <br />
+		<span class="glyphicon glyphicon-education"></span> Centennial College
+	</div>
+    <!-- <div class="col-sm-3">
+    	<ul>
+	    	<li>Andrew Cumming</li>
+	    	<li>Luke Farnell</li>
+	    	<li>Amina Abbasi</li>
+    	</ul>
+	</div>
+    <div class="col-sm-3">
+    	<ul>
+	    	<li>Andrew Cumming</li>
+	    	<li>Luke Farnell</li>
+	    	<li>Amina Abbasi</li>
+    	</ul>
+	</div> -->
+	</div>
+</footer>
+
+</html>

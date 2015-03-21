@@ -1,6 +1,6 @@
 <html>
-<head>
-<script>
+
+ <script>
 function validateForm() {
     var artist = document.forms["addSong"]["artist"].value.trim();
     var title= document.forms["addSong"]["title"].value.trim();
@@ -13,29 +13,36 @@ function validateForm() {
     }
 }
 </script>
-<title>
-Track My Words
-</title>
-</head>
+ 	<title>
+ 		TrackMyWords | Admin
+ 	</title>
+ 	
+ 	
+
+
+
 
 
 <body>
-<h1>Track My words - Admin</h1>
 
 
 
+
+ <div class="row">
+ 	<div class="col-sm-offset-1 col-sm-10">
 <div id="content">
 <h2> Add Song </h2>
 <form name="addSong" action="index.html" method="post" onClick="return validateForm()">
-<p><text>Artist</text> <input type="text" name="artist" ></p>
+<p><text>Artist&nbsp;&nbsp; </text> <input type="text" name="artist" ></p>
 
-<p><text>Title</text> <input type="text" name="title" ></p>
-<p><text>Album</text> <input type="text" name="album" </p>
-<p><text>Year</text> <input type="text" name="year" ></p>
+<p>   Title&nbsp;&nbsp; &nbsp;  <input type="text" name="title" ></p>
+<p><text>Album</text> <input type="text" name="album"> </p>
+<p><text>Year&nbsp; &nbsp;  </text> <input type="text" name="year" ></p>
 
 
 
-<p>Lyrics <textarea type="text" rows="25" cols="100" name="lyrics"></textarea></p>
+<p>Lyrics</p>
+	<textarea type="text" rows="25" cols="100" name="lyrics"></textarea>
 
 
 <input type="checkbox" name="draft" value="draft">Add to Draft
@@ -43,7 +50,13 @@ Track My Words
 <button type="button">Add</button>
 <button type="button">View All</button>
 </div>
+</div>
+</div>
+
 </form>
 
 </body>
+
+
+ 
 </html>
