@@ -27,9 +27,9 @@ public class InvalidUserQueryTests {
 
     @Parameters
     public static List<Object[]> data() {
-        Object[][] data = new Object[][]{{"", 400, Constants.NO_TYPE_PARAMETER_RESPONSE},
-                {"?type=song", 400, Constants.NO_QUERY_PARAMETER_RESPONSE},
-                {"?query=monkey", 400, Constants.NO_TYPE_PARAMETER_RESPONSE}};
+        Object[][] data = new Object[][]{{"", 400, Constants.UserErrors.NO_TYPE_PARAMETER_RESPONSE},
+                {"?type=song", 400, Constants.UserErrors.NO_QUERY_PARAMETER_RESPONSE},
+                {"?query=monkey", 400, Constants.UserErrors.NO_TYPE_PARAMETER_RESPONSE}};
         return Arrays.asList(data);
     }
 

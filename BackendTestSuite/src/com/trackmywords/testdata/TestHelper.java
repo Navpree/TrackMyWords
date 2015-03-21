@@ -1,21 +1,24 @@
 package com.trackmywords.testdata;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.Charset;
 
 public class TestHelper {
 
-    public static HttpURLConnection createConnection(String url) throws IOException {
+    public static HttpURLConnection createConnection(String url, String method) throws IOException {
         URL location = new URL(url);
         HttpURLConnection connection = (HttpURLConnection) location.openConnection();
+        connection.setRequestMethod(method);
         connection.setDoInput(true);
         connection.setDoOutput(true);
         connection.connect();
         return connection;
+    }
+
+    public static HttpURLConnection createConnection(String url) throws IOException {
+        return TestHelper.createConnection(url, "GET");
     }
 
     public static String getResponseString(HttpURLConnection connection) throws IOException {
@@ -32,6 +35,14 @@ public class TestHelper {
             buffer.append(line);
         }
         return buffer.toString();
+    }
+
+    public static void writePostParameters(HttpURLConnection con, String params){
+        try(DataOutputStream out = new DataOutputStream(con.getOutputStream())){
+            out.write(params.getBytes(Charset.forName("UTF-8")));
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
 }

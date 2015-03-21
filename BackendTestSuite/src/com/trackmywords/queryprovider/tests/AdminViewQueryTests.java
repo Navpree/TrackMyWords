@@ -16,19 +16,20 @@ import java.util.Arrays;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class AdminQueryTests {
+public class AdminViewQueryTests {
 
     private String query;
     private int count;
 
-    public AdminQueryTests(String query, int count){
+    public AdminViewQueryTests(String query, int count){
         this.query = query;
         this.count = count;
     }
 
     @Parameters
     public static List<Object[]> data(){
-        Object[][] data = new Object[][]{{"/0?title=monkey&sort=title", 0}};
+        Object[][] data = new Object[][]{{"/1?title=monkey&sort=title", 1},
+                {"/1?title=baby&sort=title", 1}};
         return Arrays.asList(data);
     }
 
