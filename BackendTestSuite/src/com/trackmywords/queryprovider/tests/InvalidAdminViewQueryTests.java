@@ -14,21 +14,23 @@ import java.util.Arrays;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class InvalidAdminQueryTests {
+public class InvalidAdminViewQueryTests {
 
-    private String query;
+    private String query, message;
     private int code;
 
-    public InvalidAdminQueryTests(String query, int code) {
+    public InvalidAdminViewQueryTests(String query, int code, String message) {
         this.query = query;
         this.code = code;
+        this.message = message;
     }
 
     @Parameters
     public static List<Object[]> data() {
-        Object[][] data = new Object[][]{{"/0", 400},
-                {"/0?title=monkey", 400},
-                {"/0?sort=title", 400}};
+        Object[][] data = new Object[][]{{"/", 400, Constants.AdminViewErrors.NO_VALID_PAGE_PARAM},
+                {"/1?title=monkey", 400, Constants.AdminViewErrors.NO_VALID_SORT_PARAM},
+                {"/1?sort=title", 400, Constants.AdminViewErrors.NO_VALID_SEARCH_TITLE},
+                {"/0?title=monkey&sort=title", 500, Constants.AdminViewErrors.EXCEPTION_AT_PAGE_0}};
         return Arrays.asList(data);
     }
 
@@ -40,6 +42,7 @@ public class InvalidAdminQueryTests {
             int code = con.getResponseCode();
             Assert.assertEquals(this.code, code);
             String response = TestHelper.getResponseString(con);
+            Assert.assertEquals(message, response);
         } catch (IOException e) {
             e.printStackTrace();
             Assert.fail("");
