@@ -1,0 +1,2 @@
+INSERT INTO Song (song_id, title, lyrics, release_date) VALUES ('','','','');
+
