@@ -1,0 +1,1 @@
+INSERT INTO Album (album_id, title, cover, release_date) VALUES ('','','','');
