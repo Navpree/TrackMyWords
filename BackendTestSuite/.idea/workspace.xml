@@ -25,7 +25,18 @@
     <favorites_list name="BackendTestSuite" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="InvalidAdminInsertQueryTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/InvalidAdminInsertQueryTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.41078305" vertical-offset="326" max-vertical-offset="1105">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -42,9 +53,11 @@
         <option value="$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/AdminInvalidUpdateQueryTests.java" />
         <option value="$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/InvalidUserQueryTests.java" />
         <option value="$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/InvalidAdminViewQueryTests.java" />
+        <option value="$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/InvalidAdminUpdateQueryTests.java" />
+        <option value="$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/AdminInsertQueryTests.java" />
         <option value="$PROJECT_DIR$/src/com/trackmywords/testdata/TestHelper.java" />
         <option value="$PROJECT_DIR$/src/com/trackmywords/testdata/Constants.java" />
-        <option value="$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/InvalidAdminUpdateQueryTests.java" />
+        <option value="$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/InvalidAdminInsertQueryTests.java" />
       </list>
     </option>
   </component>
@@ -83,7 +96,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,6 +160,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -168,7 +181,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.InvalidAdminUpdateQueryTests">
+  <component name="RunManager" selected="JUnit.Invalid AdminInsertQueryTests">
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -371,13 +384,13 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="InvalidAdminUpdateQueryTests" type="JUnit" factoryName="JUnit">
+    <configuration default="false" name="AdminViewQueryTests" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="BackendTestSuite" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="PACKAGE_NAME" value="com.trackmywords.queryprovider.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.trackmywords.queryprovider.tests.InvalidAdminUpdateQueryTests" />
+      <option name="MAIN_CLASS_NAME" value="com.trackmywords.queryprovider.tests.AdminViewQueryTests" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -394,13 +407,36 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="AdminViewQueryTests" type="JUnit" factoryName="JUnit">
+    <configuration default="false" name="Invalid AdminInsertQueryTests" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="BackendTestSuite" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="PACKAGE_NAME" value="com.trackmywords.queryprovider.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.trackmywords.queryprovider.tests.AdminViewQueryTests" />
+      <option name="MAIN_CLASS_NAME" value="com.trackmywords.queryprovider.tests.InvalidAdminInsertQueryTests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="InvalidAdminUpdateQueryTests" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="BackendTestSuite" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="com.trackmywords.queryprovider.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.trackmywords.queryprovider.tests.InvalidAdminUpdateQueryTests" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -486,12 +522,13 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.InvalidAdminUpdateQueryTests" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.AdminViewQueryTests" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.InvalidAdminViewQueryTests" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.InvalidUserQueryTests" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.UserQueryTests" />
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.AdminViewQueryTests" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.Invalid AdminInsertQueryTests" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.InvalidAdminUpdateQueryTests" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.InvalidAdminViewQueryTests" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.InvalidUserQueryTests" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.UserQueryTests" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -508,11 +545,13 @@
       <workItem from="1426794669808" duration="3553000" />
       <workItem from="1426889281160" duration="960000" />
       <workItem from="1426893607851" duration="2900000" />
+      <workItem from="1427305579851" duration="550000" />
+      <workItem from="1427421543016" duration="3159000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11787000" />
+    <option name="totallyTimeSpent" value="15496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1554" height="916" extended-state="6" />
@@ -532,10 +571,9 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28872368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20156047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20156047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -545,6 +583,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496749" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -597,7 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62637365" vertical-offset="185" max-vertical-offset="986">
           <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -605,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.492674" vertical-offset="445" max-vertical-offset="1020">
           <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -613,38 +650,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75091577" vertical-offset="287" max-vertical-offset="986">
           <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/AdminViewQueryTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1904762" vertical-offset="372" max-vertical-offset="1071">
-          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.24358974" vertical-offset="394" max-vertical-offset="1071">
+          <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/trackmywords/testdata/TestHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2580231" vertical-offset="139" max-vertical-offset="918">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/trackmywords/testdata/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51044387" vertical-offset="0" max-vertical-offset="766">
-          <caret line="23" column="139" selection-start-line="23" selection-start-column="139" selection-end-line="23" selection-end-column="139" />
+        <state vertical-scroll-proportion="-0.031135531" vertical-offset="306" max-vertical-offset="969">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/InvalidAdminUpdateQueryTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7197802" vertical-offset="83" max-vertical-offset="1088">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4084249" vertical-offset="236" max-vertical-offset="1088">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trackmywords/testdata/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8086304" vertical-offset="96" max-vertical-offset="680">
+          <caret line="31" column="89" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/trackmywords/queryprovider/tests/InvalidAdminInsertQueryTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41078305" vertical-offset="326" max-vertical-offset="1105">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>

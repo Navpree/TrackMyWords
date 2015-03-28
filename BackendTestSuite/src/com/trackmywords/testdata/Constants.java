@@ -23,4 +23,12 @@ public class Constants {
         public static final String NO_VALID_RELEASE_DATE = "{error: \"The provided releaseDate value is not a valid date for the format dd-MM-yyyy.\"}";
         public static final String NO_VALID_LYRICS_OR_TITLE = "{error:\"The provided title or lyric value is not a valid string value.\"}";
     }
+
+    public static class AdminInsertErrors{
+        public static final String ONLY_POST_ACCEPTED = "{error: \"Only post requests are allowed at this point.\"}";
+        public static final String TITLE_KEY_NOT_FOUND = "Required key not found: title";
+        public static final String LYRICS_KEY_NOT_FOUND = "Required key not found: lyrics";
+        public static final String INVALID_DATE_FORMAT = "The value 'release_date' is not valid for the value 'test'.";
+        public static final String ALBUM_KEY_NOT_FOUND = "Required key not found: album";
+    }
 }

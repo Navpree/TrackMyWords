@@ -30,6 +30,9 @@ public class TestHelper {
         }
         StringBuffer buffer = new StringBuffer("");
         String line;
+        if(in == null){
+            return "";
+        }
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
         while ((line = reader.readLine()) != null) {
             buffer.append(line);
@@ -37,11 +40,11 @@ public class TestHelper {
         return buffer.toString();
     }
 
-    public static void writePostParameters(HttpURLConnection con, String params){
+    public static void writePostParameters(HttpURLConnection con, String params) throws IOException {
         try(DataOutputStream out = new DataOutputStream(con.getOutputStream())){
             out.write(params.getBytes(Charset.forName("UTF-8")));
         }catch(Exception e){
-            e.printStackTrace();
+            throw e;
         }
     }
 
