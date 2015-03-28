@@ -1,79 +1,57 @@
-<html>
-<head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<!-- possibly javascript for form validation -->
+<div class="row">
 
-	<title>
-		TrackMyWords | Admin
-	</title>
-	
-	<style type="text/css">
-	.auto-style1 {
-		margin-left: 4;
-	}
-	</style>
-	
-	<div class="col-sm-offset-1 col-sm-10">
-		<h1>TrackMyWords <small>Admin Page</small></h1>
+<form class="form-horizontal" name="songForm" action="index.html" method="post">
+
+<div class="form-group">
+	<label class="col-sm-2 control-label">Artist Name:</label>
+	<div class="col-sm-9">
+		<input type="text" class="form-control" name="artistName" placeholder="Enter artist name" value="artist name to be updated">
 	</div>
-	
-</head>
-
-<body>
-
-
- <div class="row">
- 	<div class="col-sm-offset-1 col-sm-10">
-<div id="content">
-<h2> Update Song </h2>
-<form name="addSong" action="index.html" method="post" onClick="return validateForm()">
-<p><text>Artist&nbsp;&nbsp; </text> <input type="text" name="artist" ></p>
-
-<p>   Title&nbsp;&nbsp; &nbsp;  <input type="text" name="title" ></p>
-<p><text>Album</text> <input type="text" name="album" > </p>
-<p><text>Year&nbsp; &nbsp;  </text> <input type="text" name="year" ></p>
-
-
-
-<p>Lyrics</p>
-	<textarea type="text" rows="25" cols="100" name="lyrics"></textarea>
-
-
-<input type="checkbox" name="draft" value="draft">Add to Draft
-
-<button type="button"></button>
-<button type="button">View All</button>
-</div>
-</div>
 </div>
 
+<div class="form-group">
+	<label class="col-sm-2 control-label">Song Title:</label>
+	<div class="col-sm-9">
+		<input type="text" class="form-control" name="songTitle" placeholder="Enter song title" value="song title to be updated">
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-2 control-label">Album Name:</label>
+	<div class="col-sm-9">
+		<input type="text" class="form-control" name="albumName" placeholder="Enter album name" value="album name to be updated">
+	</div>
+</div>
+
+
+<div class="form-group">
+	<label class="col-sm-2 control-label">Release Date:</label>
+	<div class="col-sm-9">
+		<input type="text" class="form-control" name="releaseDate" placeholder="Enter year of release" value="date to be updated">
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-2 control-label">Song Lyrics:</label>
+	<div class="col-sm-9">
+		<textarea type="text" class="form-control" rows="10" name="songLyrics" placeholder="current lyrics to be updated"></textarea>
+	</div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+		<div class="checkbox">
+		<label><input type="checkbox" name="draftMode">Draft</label>
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-7">
+		<input class="btn btn-default" type="reset" name="reset" value="Reset"/>
+		<input class="btn btn-success" type="submit" name="submit" value="Update Song" onClick="return validateForm()"/>
+	</div>
+</div>
+ 
 </form>
-
-</body>
-
-<footer>
-	<hr>
-	<div class="row col-sm-offset-2">
-    <div class="col-sm-4">
-		<span class="glyphicon glyphicon-phone"></span> TrackMyWords <br />
-		<span class="glyphicon glyphicon-copyright-mark"></span> Team Paniuta, 2015 <br />
-		<span class="glyphicon glyphicon-education"></span> Centennial College
-	</div>
-    <!-- <div class="col-sm-3">
-    	<ul>
-	    	<li>Andrew Cumming</li>
-	    	<li>Luke Farnell</li>
-	    	<li>Amina Abbasi</li>
-    	</ul>
-	</div>
-    <div class="col-sm-3">
-    	<ul>
-	    	<li>Andrew Cumming</li>
-	    	<li>Luke Farnell</li>
-	    	<li>Amina Abbasi</li>
-    	</ul>
-	</div> -->
-	</div>
-</footer>
-
-</html>
+</div>
