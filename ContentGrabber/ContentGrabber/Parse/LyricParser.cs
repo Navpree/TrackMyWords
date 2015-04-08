@@ -34,6 +34,7 @@ namespace ContentGrabber.Parse
             }
             items.Add("album", al);
             string raw = WebUtility.HtmlDecode(doc.DocumentNode.SelectSingleNode(Constants.XPaths.SONG_LYRIC_BODY).InnerText);
+            raw = raw = raw.Replace("[verse]", "").Replace("[chorus]", "").Replace("[Verse]", "").Replace("[Chorus]", "");
             items.Add("lyrics", Regex.Replace(raw, @"\t|\n|\r", " ").Trim());
             return items;
         }
