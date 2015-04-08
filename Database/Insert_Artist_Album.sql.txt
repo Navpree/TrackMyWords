@@ -1,0 +1,1 @@
+INSERT INTO Artist_Album (artist_album_id, album_id, artist_id) VALUES ('','','');
