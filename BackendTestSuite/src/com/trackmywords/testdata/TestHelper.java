@@ -43,6 +43,7 @@ public class TestHelper {
     public static void writePostParameters(HttpURLConnection con, String params) throws IOException {
         try(DataOutputStream out = new DataOutputStream(con.getOutputStream())){
             out.write(params.getBytes(Charset.forName("UTF-8")));
+            out.flush();
         }catch(Exception e){
             throw e;
         }
