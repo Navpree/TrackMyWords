@@ -10,6 +10,9 @@ app.config(['$routeProvider', function($routeProvider) {
             when('/viewall', {
                 templateUrl : 'view.html'
             }).
+            when('/update', {
+                templateUrl : 'update.html'
+            }).
             otherwise({
                 redirectTo: '/index'
             });
