@@ -1,0 +1,7 @@
+select Song.song_id, Song.title, Song.lyrics, Song.release_date, Album.title
+from Song
+INNER JOIN Song_Album 
+ON Song.title = Song_Album.song_id
+INNER JOIN Album
+ON Song_Album.title = Album.album_id
+order by Song.song_id;
