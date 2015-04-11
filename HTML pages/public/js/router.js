@@ -8,7 +8,8 @@ app.config(['$routeProvider', function($routeProvider) {
                 templateUrl : 'add.html'
             }).
             when('/viewall', {
-                templateUrl : 'view.html'
+                templateUrl : 'view.html',
+                controller: 'view'
             }).
             when('/update', {
                 templateUrl : 'update.html'

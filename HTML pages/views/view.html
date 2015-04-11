@@ -1,60 +1,42 @@
 <script type="text/javascript">
-function confirmRemove(){
-var remove=confirm("Are you sure you want to delete this song");
-if(remove){
-alert("Song is removed");
-}
-}
+    function confirmRemove() {
+        var remove = confirm("Are you sure you want to delete this song");
+        if (remove) {
+            alert("Song is removed");
+        }
+    }
 </script>
 
 <!-- DISPLAYS ALL THE SONGS -->
 <div class="row">
-<div class="col-sm-offset-1 col-sm-10">
+    <div class="col-sm-offset-1 col-sm-10">
 
-<table class="table">
-<!-- temporary placeholders -->
+        <table class="table">
+            <!-- temporary placeholders -->
 
-<tr>
-	<td>Artist Name</td>
-	<td>Song Title</td>
-	<td>Album Name</td>
-	<td>Year</td>
-	<td colspan=2></td>
-</tr>
+            <thead>
+                <tr>
+                    <th>Artist Name</th>
+                    <th>Song Title</th>
+                    <th>Album Name</th>
+                    <th>Year</th>
+                    <th colspan=2>
+                        </td>
+                </tr>
+            </thead>
 
-<tr>
-    
-     <td>Natasha Bedingfield</td>
-     <td>Pocketful of Sunshine</td>
-     <td>Pocketful of Sunshine</td>
-     <td>2008</td>
-     
-     <td><a href="#update">Update</a></td>
-     <td><a href="#" onclick="confirmRemove()">Remove</a></td>
-</tr>
-
-<tr>
-    
-     <td>Justin Bieber</td>
-     <td>Baby</td>
-     <td>My World</td>
-     <td>2010</td>
-     
-     <td><a href="#update">Update</a></td>
-     <td><a href="#" onclick="confirmRemove()">Remove</a></td>
-</tr>
-
-<tr>
-    
-     <td>Celine Dion</td>
-     <td>My Heart Will Go On</td>
-     <td>Let's Talk About Love</td>
-     <td>1997</td>
-     
-     <td><a href="#update">Update</a></td>
-     <td><a href="#" onclick="confirmRemove()">Remove</a></td>
-</tr>
-
-</table>
-</div>
+            <tbody>
+                <tr ng-repeat="item in list">
+                    <td>{{item.artist}}</td>
+                    <td>{{item.song}}</td>
+                    <td>{{item.album}}</td>
+                    <td>{{item.year}}</td>
+                    <td>
+                        <button>Update</button>
+                        <button>Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
