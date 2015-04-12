@@ -1,12 +1,3 @@
-<script type="text/javascript">
-    function confirmRemove() {
-        var remove = confirm("Are you sure you want to delete this song");
-        if (remove) {
-            alert("Song is removed");
-        }
-    }
-</script>
-
 <!-- DISPLAYS ALL THE SONGS -->
 <div class="row">
     <div class="col-sm-offset-1 col-sm-10">
@@ -16,24 +7,23 @@
 
             <thead>
                 <tr>
-                    <th>Artist Name</th>
                     <th>Song Title</th>
+                    <th>Artist Name</th>
+                    <th>Song Lyrics</th>
                     <th>Album Name</th>
-                    <th>Year</th>
-                    <th colspan=2>
-                        </td>
+                    <th colspan=2></td>
                 </tr>
             </thead>
 
             <tbody>
                 <tr ng-repeat="item in list">
-                    <td>{{item.artist}}</td>
-                    <td>{{item.song}}</td>
-                    <td>{{item.album}}</td>
-                    <td>{{item.year}}</td>
+                    <td>{{item.songTitle}}</td>
+                    <td>{{item.artistName}}</td>
+                    <td>{{item.songLyrics}}</td>
+                    <td>{{item.albumTitle}}</td>
                     <td>
-                        <button class="btn btn-primary glyphicon glyphicon-edit">Update</button>
-                        <button class="btn btn-danger glyphicon glyphicon-remove">Remove</button>
+                        <button class="btn btn-primary glyphicon glyphicon-edit" ng-click="update()">Update</button>
+                        <button class="btn btn-danger glyphicon glyphicon-remove" ng-click="remove(item.id)">Remove</button>
                     </td>
                 </tr>
             </tbody>
