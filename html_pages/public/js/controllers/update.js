@@ -1,7 +1,7 @@
 app.controller('update', function($scope, songService, $http, $location){
     $scope.song = songService.getSong()
     console.log($scope.song)
-    
+    $scope.disable = 'disabled';
     
     $scope.save = function(){
         console.log($scope.song)

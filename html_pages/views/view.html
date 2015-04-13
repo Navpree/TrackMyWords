@@ -1,0 +1,43 @@
+<!-- DISPLAYS ALL THE SONGS -->
+<div class="row">
+    <div class="col-sm-offset-1 col-sm-10">
+
+        <div style="text-align: center;">
+            <a ng-click="previous()" class="btn btn-primary glyphicon glyphicon-chevron-left {{noPrev}}">Previous</a>
+            &nbsp;&nbsp;{{currentPage}}&nbsp;&nbsp;
+            <a ng-click="next()" class="btn btn-primary glyphicon glyphicon-chevron-right {{noNext}}">Next</a>
+        </div>
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>Song Title</th>
+                    <th>Artist Name</th>
+                    <th>Album Name</th>
+                    <th>Song Lyrics</th>
+                    <th colspan=2></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="item in list">
+                    <td>{{item.songTitle}}</td>
+                    <td>{{item.artistName}}</td>
+                    <td>{{item.albumTitle}}</td>
+                    <td>{{item.songLyrics}}</td>
+                    <td colspan=2 style="text-align: center;">
+                        <button class="btn btn-primary glyphicon glyphicon-edit" ng-click="update(item)">Update</button><br/><br/>
+                        <button class="btn btn-danger glyphicon glyphicon-remove" ng-click="remove(item.id)">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center;">
+            <a ng-click="previous()" class="btn btn-primary glyphicon glyphicon-chevron-left {{noPrev}}">Previous</a>
+            &nbsp;&nbsp;{{currentPage}}&nbsp;&nbsp;
+            <a ng-click="next()" class="btn btn-primary glyphicon glyphicon-chevron-right {{noNext}}">Next</a>
+        </div>
+    </div>
+</div>

@@ -5,7 +5,7 @@
 <div class="form-group">
 	<label class="col-sm-2 control-label">Artist Name:</label>
 	<div class="col-sm-9">
-		<input type="text" class="form-control" name="artistName" placeholder="Enter artist name" value="artist name to be updated" ng-model="song.artistName">
+		<input type="text" class="form-control" name="artistName" placeholder="Enter artist name" ng-model="song.artistName">
 	</div>
 </div>
 
@@ -32,7 +32,7 @@
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-7">
-		<input class="btn btn-default" type="reset" name="reset" value="Reset"/>
+        <input class="btn btn-default {{disable}}" type="reset" name="reset" value="Reset"/>
 		<input class="btn btn-success" type="submit" name="submit" value="Update Song" ng-click="save()" />
 	</div>
 </div>

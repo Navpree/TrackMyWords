@@ -59,8 +59,8 @@ public class SearchScreen extends ActionBarActivity {
         String searchQuery = textToSearch.getText().toString();
 
         //check if input is not blank and at least 3 characters ignoring leading spaces
-        if( searchQuery.trim().length() < 3 ) {
-            textToSearch.setError("Too shot, search term must be at least 3 characters in length.");
+        if( searchQuery.trim().length() < 3 || searchQuery.trim().length() > 20 ) {
+            textToSearch.setError("Too shot, search term must be between 3 and 20 characters in length.");
         }else {
             //create a new intent to start the result activity
             Intent intent = new Intent(SearchScreen.this, ResultScreen.class);
