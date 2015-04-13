@@ -1,55 +1,39 @@
 <div class="row">
 
-<form class="form-horizontal" name="songForm" action="index.html" method="post">
+<form class="form-horizontal" name="songForm" >
 
 <div class="form-group">
 	<label class="col-sm-2 control-label">Artist Name:</label>
 	<div class="col-sm-9">
-		<input type="text" class="form-control" name="artistName" placeholder="Enter artist name" value="artist name to be updated">
+		<input type="text" class="form-control" name="artistName" placeholder="Enter artist name" value="artist name to be updated" ng-model="song.artistName">
 	</div>
 </div>
 
 <div class="form-group">
 	<label class="col-sm-2 control-label">Song Title:</label>
 	<div class="col-sm-9">
-		<input type="text" class="form-control" name="songTitle" placeholder="Enter song title" value="song title to be updated">
+		<input type="text" class="form-control" name="songTitle" placeholder="Enter song title" ng-model="song.songTitle">
 	</div>
 </div>
 
 <div class="form-group">
 	<label class="col-sm-2 control-label">Album Name:</label>
 	<div class="col-sm-9">
-		<input type="text" class="form-control" name="albumName" placeholder="Enter album name" value="album name to be updated">
-	</div>
-</div>
-
-
-<div class="form-group">
-	<label class="col-sm-2 control-label">Release Date:</label>
-	<div class="col-sm-9">
-		<input type="text" class="form-control" name="releaseDate" placeholder="Enter year of release" value="date to be updated">
+		<input type="text" class="form-control" name="albumName" placeholder="Enter album name" ng-model="song.albumTitle">
 	</div>
 </div>
 
 <div class="form-group">
 	<label class="col-sm-2 control-label">Song Lyrics:</label>
 	<div class="col-sm-9">
-		<textarea type="text" class="form-control" rows="10" name="songLyrics" placeholder="current lyrics to be updated"></textarea>
-	</div>
-</div>
-
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-8">
-		<div class="checkbox">
-		<label><input type="checkbox" name="draftMode">Draft</label>
-		</div>
+		<textarea type="text" class="form-control" rows="10" name="songLyrics" placeholder="current lyrics to be updated" ng-model="song.songLyrics"></textarea>
 	</div>
 </div>
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-7">
 		<input class="btn btn-default" type="reset" name="reset" value="Reset"/>
-		<input class="btn btn-success" type="submit" name="submit" value="Update Song" onClick="return validateForm()"/>
+		<input class="btn btn-success" type="submit" name="submit" value="Update Song" ng-click="save()" />
 	</div>
 </div>
  

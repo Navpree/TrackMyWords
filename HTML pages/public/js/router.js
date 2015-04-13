@@ -6,14 +6,16 @@ app.config(['$routeProvider', function($routeProvider) {
                 controller: 'index'
             }).
             when('/add',{
-                templateUrl : 'add.html'
+                templateUrl : 'add.html',
+                controller: 'insert'
             }).
             when('/viewall', {
                 templateUrl : 'view.html',
                 controller: 'view'
             }).
             when('/update', {
-                templateUrl : 'update.html'
+                templateUrl : 'update.html',
+                controller: 'update'
             }).
             otherwise({
                 redirectTo: '/viewall'
