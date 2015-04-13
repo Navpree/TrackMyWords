@@ -31,8 +31,8 @@ public class InvalidAdminUpdateQueryTests {
     public static List<Object[]> data(){
         Object[][] data = new Object[][]{{"/", "", 400, Constants.AdminUpdateErrors.NO_VALID_ID_PARAM, "GET"},
                 {"/1", "", 400, Constants.AdminUpdateErrors.ONLY_POST_ACCEPTED, "GET"},
-                {"/1", "", 400, Constants.AdminUpdateErrors.NO_VALID_RELEASE_DATE, "POST"},
-                {"/1", "releaseDate=11-08-2013", 400, Constants.AdminUpdateErrors.NO_VALID_RELEASE_DATE, "POST"}};
+                {"/1", "", 400, Constants.AdminUpdateErrors.NO_VALID_TITLE, "POST"},
+                {"/1", "releaseDate=11-08-2013", 400, Constants.AdminUpdateErrors.NO_VALID_TITLE, "POST"}};
         return Arrays.asList(data);
     }
 

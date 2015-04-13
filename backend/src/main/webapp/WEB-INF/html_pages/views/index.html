@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="trackmywords">
+<head>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+	<title>
+		TrackMyWords | Admin
+	</title>
+
+</head>
+
+<body>
+
+	<div class="row col-sm-offset-1">
+		<div class="col-sm-6 page-header">
+			<h1>TrackMyWords <small>Admin Page</small></h1>
+		</div>
+	</div>
+
+    <div class="row col-sm-offset-1">
+		<div class="col-sm-6">
+            <h2>View/Insert Records</h2>
+		</div>
+	</div>
+	<div class="row col-sm-offset-1">
+		<div class="col-sm-1">
+			<a href="#viewall" class="btn btn-default">View All</a>
+		</div>
+	    <div class="col-sm-1">
+			<a href="#add" class="btn btn-default">Add Song</a>
+		</div>
+	</div>
+<br/>
+
+<div id="load-cover" style="top: 0px; left: 0px; position: absolute; visibility: hidden; background-color: rgba(100, 100, 100, 0.2); z-index: 2000;">
+    <img id="cover-image" style="position: absolute; border-radius: 25px;" width="100" height="100" src="http://thinkfuture.helpfulhintsforliving.com/wp-content/uploads/2013/10/loading_spinner.gif"/>
+</div>
+    
+<!-- content -->
+<div class="jumbotron">
+	<div ng-view></div>
+</div>
+    
+<!-- content -->
+<script src="../public/js/libs/angular.js"></script>
+<script src="../public/js/libs/angular-route.js"></script>
+<script src="../public/js/app.js"></script>
+<script src="../public/js/router.js"></script>
+<script src="../public/js/controllers/index.js"></script>
+<script src="../public/js/controllers/view.js"></script>
+<script src="../public/js/controllers/insert.js"></script>
+<script src='../public/js/controllers/update.js'></script>
+<script src="../public/js/loadSize.js"></script>
+
+</body>
+
+<footer>
+	<hr>
+	<div class="row col-sm-offset-2">
+    	<div class="col-sm-4">
+			<span class="glyphicon glyphicon-phone"></span> TrackMyWords <br />
+			<span class="glyphicon glyphicon-copyright-mark"></span> Team Paniuta, 2015 <br />
+			<span class="glyphicon glyphicon-education"></span> Centennial College
+		</div>
+	</div>
+</footer>
+</html>
