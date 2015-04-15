@@ -29,8 +29,7 @@ public class InvalidAdminViewQueryTests {
     public static List<Object[]> data() {
         Object[][] data = new Object[][]{{"/", 400, Constants.AdminViewErrors.NO_VALID_PAGE_PARAM},
                 {"/1?title=monkey", 400, Constants.AdminViewErrors.NO_VALID_SORT_PARAM},
-                {"/1?sort=title", 400, Constants.AdminViewErrors.NO_VALID_SEARCH_TITLE},
-                {"/0?title=monkey&sort=title", 500, Constants.AdminViewErrors.EXCEPTION_AT_PAGE_0}};
+                {"/1", 400, Constants.AdminViewErrors.NO_VALID_SORT_PARAM}};
         return Arrays.asList(data);
     }
 

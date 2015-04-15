@@ -5,7 +5,16 @@ package paniuta.trackmywords.beans;
  */
 public class Lyrics {
 
+    private int id;
     private String songTitle, artistName, albumTitle, songLyrics;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getSongTitle() {
         return songTitle;

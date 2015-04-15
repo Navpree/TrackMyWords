@@ -47,6 +47,7 @@ public class ResultScreen extends ActionBarActivity implements View.OnClickListe
         TextView textSearchedFor = (TextView) findViewById(R.id.txtSearchedFor);
         if(valid){
             String searchQuery = intent.getStringExtra(SearchScreen.EXTRA_MESSAGE);
+            lastQueryMessage = searchQuery;
             textSearchedFor.append(searchQuery);
             makeRequest(searchQuery);
         }else{
